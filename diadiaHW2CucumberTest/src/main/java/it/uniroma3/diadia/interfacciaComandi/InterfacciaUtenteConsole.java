@@ -13,7 +13,7 @@ public class InterfacciaUtenteConsole implements InterfacciaUtente{
 		this.scrittore = new ScrittoreAutomaticoComandi();
 	}
 	
-
+//mostra messaggio spostato direttamente in scrittore? MOLTO PROBABILE
 	public void mostraMessaggio(String messaggio) {
 		scrittore.mostraMessaggioScrittore(messaggio);
 		
