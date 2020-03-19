@@ -1,4 +1,4 @@
-package it.uniroma3.diadia.comandi;
+package it.uniroma3.diadia.interfacciaComandi;
 
 public interface InterfacciaUtente {
 
