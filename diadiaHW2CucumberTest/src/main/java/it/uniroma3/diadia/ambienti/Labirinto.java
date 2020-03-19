@@ -11,15 +11,6 @@ import it.uniroma3.diadia.attrezzi.Attrezzo;
 public class Labirinto {
 	private Stanza stanzaCorrente;
 	private Stanza stanzaVincente;
-	static final private String MESSAGGIO_BENVENUTO = ""+
-			"Ti trovi nell'Universita', ma oggi e' diversa dal solito...\n" +
-			"Meglio andare al piu' presto in biblioteca a studiare. Ma dov'e'?\n"+
-			"I locali sono popolati da strani personaggi, " +
-			"alcuni amici, altri... chissa!\n"+
-			"Ci sono attrezzi che potrebbero servirti nell'impresa:\n"+
-			"puoi raccoglierli, usarli, posarli quando ti sembrano inutili\n" +
-			"o regalarli se pensi che possano ingraziarti qualcuno.\n\n"+
-			"Per conoscere le istruzioni usa il comando 'aiuto'.";
 	
 	/**
 	 * costruttore del labirinto
@@ -116,10 +107,7 @@ public class Labirinto {
 	 * messaggio di benvenuto 
 	 * @return MESSAGGIO_BENVENUTO
 	 */
-	public  String getMessaggioBenvenuto() {		
-		return MESSAGGIO_BENVENUTO;
-	}
-	
+
 
 
 }

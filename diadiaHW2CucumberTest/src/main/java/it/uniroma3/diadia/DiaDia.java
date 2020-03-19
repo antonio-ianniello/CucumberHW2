@@ -2,10 +2,11 @@ package it.uniroma3.diadia;
 
 
 
-import java.util.Scanner;
+
 
 import it.uniroma3.diadia.comandi.Comando;
 import it.uniroma3.diadia.comandi.FabbricaDiComandiFisarmonica;
+import it.uniroma3.diadia.comandi.InterfacciaUtenteConsole;
 
 
 
@@ -25,26 +26,40 @@ import it.uniroma3.diadia.comandi.FabbricaDiComandiFisarmonica;
 
 public class DiaDia {
 	
+	static final private String MESSAGGIO_BENVENUTO = ""+
+			"Ti trovi nell'Universita', ma oggi e' diversa dal solito...\n" +
+			"Meglio andare al piu' presto in biblioteca a studiare. Ma dov'e'?\n"+
+			"I locali sono popolati da strani personaggi, " +
+			"alcuni amici, altri... chissa!\n"+
+			"Ci sono attrezzi che potrebbero servirti nell'impresa:\n"+
+			"puoi raccoglierli, usarli, posarli quando ti sembrano inutili\n" +
+			"o regalarli se pensi che possano ingraziarti qualcuno.\n\n"+
+			"Per conoscere le istruzioni usa il comando 'aiuto'.";
+	
+	
 	private Partita partita;
+	
+	private InterfacciaUtenteConsole IO;
 	
 
 	public DiaDia() {
 		this.partita = new Partita();
+		this.IO = new InterfacciaUtenteConsole();
 		
 	}
 
 	public void gioca() {
 		String istruzione; 
-		Scanner scannerDiLinee;
+		
 		
 		
 
-		System.out.println(this.partita.getLabirinto().getMessaggioBenvenuto());
-		scannerDiLinee = new Scanner(System.in);		
+		this.IO.mostraMessaggio(MESSAGGIO_BENVENUTO);
+		
 		do		
-			istruzione = scannerDiLinee.nextLine();
+			istruzione = IO.prendiIstruzione();
 		while (!processaIstruzione(istruzione));
-		scannerDiLinee.close();
+		IO.chiudiScanner();
 	}   
 
 
@@ -60,10 +75,10 @@ public class DiaDia {
 	comandoDaEseguire.esegui(this.partita);
 	
 	if(this.partita.vinta())
-		System.out.println("Hai vinto congratulazioni");
+		IO.mostraMessaggio("Hai vinto congratulazioni");
 	
 	if(!this.partita.getGiocatore().giocatoreIsVivo())
-		System.out.println("Hai esaurito i Cfu");
+		IO.mostraMessaggio("Hai esaurito i Cfu");
 	
 	return this.partita.isFinita();
 	
