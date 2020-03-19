@@ -35,7 +35,14 @@ public class ScrittoreAutomaticoComandi {
 
 	
 	public String getComandoInserito(int index){
-		return this.comandiInseriti.get(index);
+		String valore;
+		if(!comandiInseriti.isEmpty()) {
+			valore =this.comandiInseriti.get(index);
+		}
+		else {
+			valore = new String("ATTENZIONE");
+		}
+		return valore;
 	}
 	
 	//non dovrebbe funzionare per comandi con due parametri , 
