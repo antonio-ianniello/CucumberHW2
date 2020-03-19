@@ -54,7 +54,7 @@ public class DiaDia {
 		
 		
 
-		this.IO.mostraMessaggioScrittore(MESSAGGIO_BENVENUTO);
+		this.IO.mostraMessaggio(MESSAGGIO_BENVENUTO);
 		
 		do		
 			istruzione = IO.prendiIstruzione();

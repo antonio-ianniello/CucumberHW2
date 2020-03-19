@@ -14,7 +14,7 @@ public class InterfacciaUtenteConsole implements InterfacciaUtente{
 	}
 	
 
-	public void mostraMessaggioScrittore(String messaggio) {
+	public void mostraMessaggio(String messaggio) {
 		scrittore.mostraMessaggioScrittore(messaggio);
 		
 	}
