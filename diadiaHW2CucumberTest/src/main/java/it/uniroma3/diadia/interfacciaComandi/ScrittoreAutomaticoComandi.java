@@ -14,13 +14,13 @@ public class ScrittoreAutomaticoComandi {
 	
 	public void mostraMessaggioScrittore(String messaggio) {
 		System.out.print(messaggio);
-		this.comandiInseriti.add(messaggio);
+		this.comandiInseriti.add(messaggio);		//inserisce ogni stringa...Esempio:  vai-nord-guarda-fine (4 stringhe)
 		
 	}
 	
 	
 	
-	
+	//QUESTE FUNZIONI VANNO QUI O IN CUCUMBER? RIFLETTERCI SU
 	
 	//getters and setters for the list
 
@@ -32,6 +32,17 @@ public class ScrittoreAutomaticoComandi {
 		this.comandiInseriti = comandiInseriti;
 	}
 
+	
+	public String getComandoInserito(int index){
+		return this.comandiInseriti.get(index);
+	}
+	
+	//non dovrebbe funzionare per comandi con due parametri , 
+	//NON MI PIACE AFFATTO, se ho vai nord--> potrebbe diventare vai usa ovvero un comando inutile
+	
+	public void setComandoInserito(String comando_singolo,int index) {
+		this.comandiInseriti.set(index, comando_singolo);
+	}
 
 	
 	
