@@ -5,10 +5,17 @@ import java.util.Scanner;
 public class InterfacciaUtenteConsole implements InterfacciaUtente{
 	
 	
-	Scanner scannerDiLinee;
+	private Scanner scannerDiLinee;
+	private ScrittoreAutomaticoComandi scrittore;
+	
+	
+	public InterfacciaUtenteConsole () {
+		this.scrittore = new ScrittoreAutomaticoComandi();
+	}
+	
 
-	public void mostraMessaggio(String messaggio) {
-		System.out.print(messaggio);
+	public void mostraMessaggioScrittore(String messaggio) {
+		scrittore.mostraMessaggioScrittore(messaggio);
 		
 	}
 
@@ -26,6 +33,20 @@ public class InterfacciaUtenteConsole implements InterfacciaUtente{
 	public void chiudiScanner() {
 		scannerDiLinee.close();
 	}
+
+//aggiunti per lo scrittore
+	public Scanner getScannerDiLinee() {
+		return scannerDiLinee;
+	}
+
+
+	public void setScannerDiLinee(Scanner scannerDiLinee) {
+		this.scannerDiLinee = scannerDiLinee;
+	}
+
+
+	
+	
 	
 
 }
