@@ -83,6 +83,10 @@ public class DiaDia {
 	return this.partita.isFinita();
 	
 	}
+	//aggiunto
+	public InterfacciaUtenteConsole getIO() {
+		return this.IO;
+	}
 		
 
 

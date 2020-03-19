@@ -16,6 +16,7 @@ public class ScrittoreAutomaticoComandi {
 		System.out.print(messaggio);
 		this.comandiInseriti.add(messaggio);		//inserisce ogni stringa...Esempio:  vai-nord-guarda-fine (4 stringhe)
 		
+		
 	}
 	
 	
@@ -43,6 +44,8 @@ public class ScrittoreAutomaticoComandi {
 	public void setComandoInserito(String comando_singolo,int index) {
 		this.comandiInseriti.set(index, comando_singolo);
 	}
+	
+	
 
 	
 	

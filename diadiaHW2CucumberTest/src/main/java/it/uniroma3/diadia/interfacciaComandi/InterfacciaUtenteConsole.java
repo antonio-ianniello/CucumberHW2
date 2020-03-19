@@ -17,6 +17,7 @@ public class InterfacciaUtenteConsole implements InterfacciaUtente{
 	public void mostraMessaggio(String messaggio) {
 		scrittore.mostraMessaggioScrittore(messaggio);
 		
+		
 	}
 
 	
@@ -44,6 +45,23 @@ public class InterfacciaUtenteConsole implements InterfacciaUtente{
 		this.scannerDiLinee = scannerDiLinee;
 	}
 
+	public ScrittoreAutomaticoComandi getScrittore() {
+		return scrittore;
+	}
+
+	public void setScrittore(ScrittoreAutomaticoComandi scrittore) {
+		this.scrittore = scrittore;
+	}
+	
+	public ScrittoreAutomaticoComandi getScrittoreAutomatico() {
+		return this.scrittore;
+	}
+	
+	
+	
+
+	
+	
 
 	
 	

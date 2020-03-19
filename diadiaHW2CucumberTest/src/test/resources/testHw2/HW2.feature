@@ -21,11 +21,11 @@ Feature: Hw2
   I want to use this template for my feature file
 
   @tag1
-  Scenario: Homework two win case
+  Scenario: Homework 2 win botton help
     Given I am in atrio
     And I start the game
-    When digit command1"vai" and command2"nord"
+    When digit command1"help"
     
-    Then I am in the Winner Room
-    And I win the game
+    Then I am in the atrio and i have digitated "help"
+    
 
