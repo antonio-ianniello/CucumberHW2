@@ -6,7 +6,7 @@ package it.uniroma3.diadia;
 
 import it.uniroma3.diadia.comandi.Comando;
 import it.uniroma3.diadia.comandi.FabbricaDiComandiFisarmonica;
-import it.uniroma3.diadia.interfacciaComandi.InterfacciaUtenteConsole;
+import it.uniroma3.diadia.interfacciaComandi.IOConsole;
 
 
 
@@ -39,14 +39,16 @@ public class DiaDia {
 	
 	private Partita partita;
 	
-	private InterfacciaUtenteConsole IO;
+	private IOConsole IO;
 	
 
-	public DiaDia() {
+	public DiaDia(IOConsole interfaccia) {
+		this.IO = interfaccia;
 		this.partita = new Partita();
-		this.IO = new InterfacciaUtenteConsole();
-		
 	}
+	
+	
+	
 
 	public void gioca() {
 		String istruzione; 
@@ -83,16 +85,13 @@ public class DiaDia {
 	return this.partita.isFinita();
 	
 	}
-	//aggiunto
-	public InterfacciaUtenteConsole getIO() {
-		return this.IO;
-	}
-		
+	
 
 
-
+//va creata l' interfaccia utente console
 	public static void main(String[] argc) {
-		DiaDia gioco = new DiaDia();
+		
+		DiaDia gioco = new DiaDia(new IOConsole());
 		gioco.gioca();
 	}
 }

@@ -26,6 +26,7 @@ public class FabbricaDiComandiFisarmonica implements FabbricaDiComandi {
 		if(nomeComando==null)
 			comando=new ComandoNonValido();
 		
+		//interfaccia untente console va dato il compito
 		else if(nomeComando.equals("vai"))
 			comando= new ComandoVai();
 		else if(nomeComando.equals("prendi"))

@@ -13,7 +13,7 @@ public class DominioHelper {
 	public DiaDia getMyDiaDia() {
 		if(dia==null) {
 	
-		dia = new DiaDia();
+		dia = new DiaDia(new StringheIO());
 		}
 		
 		return dia;
