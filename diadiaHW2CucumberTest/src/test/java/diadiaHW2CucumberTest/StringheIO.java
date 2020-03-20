@@ -1,5 +1,6 @@
 package diadiaHW2CucumberTest;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -12,6 +13,14 @@ public class StringheIO implements InterfacciaUtente{
 	private String comandoAttuale;
 	
 	private List<String> comandiDigitati;
+	
+	
+	
+	public StringheIO() {
+		comandoAttuale = new String();
+		comandiDigitati = new ArrayList<String>();
+	}
+	
 	
 	
 	//mostra messaggio spostato direttamente in scrittore? MOLTO PROBABILE
@@ -38,10 +47,38 @@ public class StringheIO implements InterfacciaUtente{
 		
 		
 		//funzioni da aggiungere all' interfaccia per favorire il testing 
-		public void aggiungiIstruzione() {
-			
-			
+		public void aggiungiIstruzione(String istruzione) {
+			comandoAttuale = istruzione;		//giusto? se ho due paramentri
+			comandiDigitati.add(comandoAttuale);
+	
 			
 		}
+
+//getters and setters for easy cucumber testing
+
+		public String getComandoAttuale() {
+			return comandoAttuale;
+		}
+
+
+
+		public void setComandoAttuale(String comandoAttuale) {
+			this.comandoAttuale = comandoAttuale;
+		}
+
+
+
+		public List<String> getComandiDigitati() {
+			return comandiDigitati;
+		}
+
+
+
+		public void setComandiDigitati(List<String> comandiDigitati) {
+			this.comandiDigitati = comandiDigitati;
+		}
+		
+		
+		
 		
 }

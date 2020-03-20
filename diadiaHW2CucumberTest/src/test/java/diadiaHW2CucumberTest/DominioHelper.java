@@ -7,7 +7,7 @@ public class DominioHelper {
 	
 	
 	private DiaDia dia;
-	private InterfacciaUtente interfaccia;
+	private StringheIO interfaccia;
 
 
 	//instanzia diadia per il test
@@ -24,7 +24,7 @@ public class DominioHelper {
 	}
 	
 	
-	public InterfacciaUtente getMyInterfacciaUtente() {
+	public StringheIO getMyInterfacciaUtente() {
 		return this.interfaccia;
 	}
 	

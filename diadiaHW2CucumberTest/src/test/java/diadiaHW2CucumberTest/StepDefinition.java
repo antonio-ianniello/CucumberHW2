@@ -34,7 +34,7 @@ public class StepDefinition {
 	@Then("^I am in the atrio and i have digitated \"([^\"]*)\"$")
 	public void i_am_in_the_and_i_have_digitated(String arg2) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-	    assertEquals(comando,helper.getMyDiaDia().getIO().getScrittoreAutomatico().getComandoInserito(0));
+	    assertEquals(comando,helper.getMyInterfacciaUtente().getComandoAttuale());
 	}
 
 
