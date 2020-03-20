@@ -17,6 +17,7 @@ public class DominioHelper {
 		
 		//interfaccia o ce lo butto direttamente come new StringheIO? bho poi si vede
 		dia = new DiaDia(interfaccia);
+		dia.gioca();
 		}
 		
 		return dia;
