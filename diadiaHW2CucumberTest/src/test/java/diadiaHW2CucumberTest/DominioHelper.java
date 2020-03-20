@@ -17,7 +17,7 @@ public class DominioHelper {
 		
 		//interfaccia o ce lo butto direttamente come new StringheIO? bho poi si vede
 		dia = new DiaDia(interfaccia);
-		dia.gioca();
+		//dia.gioca();			//mi fa partire il gioco, serve o devo solo iniettare il test? più provabilmente la seconda opzione
 		}
 		
 		return dia;

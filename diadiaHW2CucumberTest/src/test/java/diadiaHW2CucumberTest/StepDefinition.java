@@ -15,7 +15,7 @@ public class StepDefinition {
 	public void i_am_in_atrio() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 	helper = new DominioHelper();
-	helper.getMyDiaDia();
+	helper.getMyDiaDia();		
 	}
 
 	@Given("^I start the game$")
@@ -29,6 +29,7 @@ public class StepDefinition {
 	    // Write code here that turns the phrase above into concrete actions
 	  
 	comando = aiuto;
+	helper.getMyInterfacciaUtente().setComandoAttuale(comando);
 	}
 
 	@Then("^I am in the atrio and i have digitated \"([^\"]*)\"$")
