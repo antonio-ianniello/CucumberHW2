@@ -7,6 +7,7 @@ package it.uniroma3.diadia;
 import it.uniroma3.diadia.comandi.Comando;
 import it.uniroma3.diadia.comandi.FabbricaDiComandiFisarmonica;
 import it.uniroma3.diadia.interfacciaComandi.IOConsole;
+import it.uniroma3.diadia.interfacciaComandi.InterfacciaUtente;
 
 
 
@@ -39,10 +40,10 @@ public class DiaDia {
 	
 	private Partita partita;
 	
-	private IOConsole IO;
+	private InterfacciaUtente IO;
 	
 
-	public DiaDia(IOConsole interfaccia) {
+	public DiaDia(InterfacciaUtente interfaccia) {
 		this.IO = interfaccia;
 		this.partita = new Partita();
 	}

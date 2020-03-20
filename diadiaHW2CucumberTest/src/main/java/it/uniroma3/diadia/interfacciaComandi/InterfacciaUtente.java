@@ -8,6 +8,8 @@ public interface InterfacciaUtente {
 	
 	public String prendiIstruzione();
 	
+	public void chiudiScanner();
+	
 	
 	
 }
