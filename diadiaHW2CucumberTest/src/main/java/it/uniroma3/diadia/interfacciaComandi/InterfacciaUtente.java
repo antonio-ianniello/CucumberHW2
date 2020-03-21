@@ -1,6 +1,11 @@
 package it.uniroma3.diadia.interfacciaComandi;
 
-public interface InterfacciaUtente {
+import java.io.Closeable;
+
+
+
+//closable
+public interface InterfacciaUtente{
 
 	
 	
@@ -9,6 +14,8 @@ public interface InterfacciaUtente {
 	public String prendiIstruzione();
 	
 	public void chiudiScanner();
+	
+	
 	
 	
 	

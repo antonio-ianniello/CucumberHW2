@@ -24,6 +24,8 @@ public class StringheIO implements InterfacciaUtente{
 	
 	
 	//mostra messaggio spostato direttamente in scrittore? MOLTO PROBABILE
+	
+	//cercare dei nomi 
 		public void mostraMessaggio(String messaggio) {
 			System.out.print(messaggio);
 			

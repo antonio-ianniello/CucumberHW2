@@ -2,7 +2,7 @@ package it.uniroma3.diadia.interfacciaComandi;
 
 import java.util.Scanner;
 
-public class IOConsole implements InterfacciaUtente{
+public class IOConsole implements InterfacciaUtente {
 	
 	
 	private Scanner scannerDiLinee;
