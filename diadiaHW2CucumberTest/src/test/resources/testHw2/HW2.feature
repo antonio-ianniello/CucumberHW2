@@ -29,12 +29,13 @@ Feature: Hw2
     Then I am in the atrio and i have digitated "help"
     
     
-    
+    ##I start the game è importante perchè crea gli oggetti stringa del comando e dei comandi che mi servono per la testabilità
     @tag2
     Scenario: Homework 2 caso digita vai est
     Given I am in atrio
+    And I start the game
     When I digit command1 "vai" and command2 "est"
-    Then I am in the "n10"
+    Then I am in the n10 and i have digitated "est"
     
     
 

@@ -1,6 +1,11 @@
 package diadiaHW2CucumberTest;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -9,6 +14,7 @@ import cucumber.api.java.en.When;
 public class StepDefinition {
 	DominioHelper helper;
 	String comando;
+	List <String> comandi;
 	
 	
 	@Given("^I am in atrio$")
@@ -22,6 +28,7 @@ public class StepDefinition {
 	public void i_start_the_game() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 	    comando = new String();
+	    comandi = new ArrayList<String>();
 	}
 
 	@When("^digit command(\\d+)\"([^\"]*)\"$")
@@ -37,6 +44,27 @@ public class StepDefinition {
 	    // Write code here that turns the phrase above into concrete actions
 	    assertEquals(comando,helper.getMyInterfacciaUtente().getComandoAttuale());
 	}
+	
+	//scenario2
+	@When("^I digit command(\\d+) \"([^\"]*)\" and command(\\d+) \"([^\"]*)\"$")
+	public void i_digit_command_and_command(int arg1, String vai, int arg3, String est) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    helper.getMyInterfacciaUtente().costruisciIstruzione(vai,est);
+	}
+	
+	@Then("^I am in the n(\\d+) and i have digitated \"([^\"]*)\"$")
+	public void i_am_in_the_n_and_i_have_digitated(int arg1, String comando2) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	assertTrue(helper.getMyInterfacciaUtente().getComandoAttuale().equals(comando2));	//ultimo comando deve essere est
+	
+	//elenco comandi digitati--> vai,est
+	comandi.addAll(helper.getMyInterfacciaUtente().getComandiDigitati());
+	
+	assertTrue(comandi.contains("vai") && comandi.contains(comando2));
+	
+	
+	}
+
 
 
 }

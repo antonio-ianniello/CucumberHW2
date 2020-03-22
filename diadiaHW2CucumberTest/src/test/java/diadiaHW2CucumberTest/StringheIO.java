@@ -8,17 +8,20 @@ import it.uniroma3.diadia.interfacciaComandi.InterfacciaUtente;
 
 public class StringheIO implements InterfacciaUtente{
 
-	private Scanner scannerDiLinee;
+	
 	
 	private String comandoAttuale;
 	
 	private List<String> comandiDigitati;
+	
+	private String stringaOutput;
 	
 	
 	
 	public StringheIO() {
 		comandoAttuale = new String();
 		comandiDigitati = new ArrayList<String>();
+		stringaOutput = new String();
 	}
 	
 	
@@ -27,36 +30,50 @@ public class StringheIO implements InterfacciaUtente{
 	
 	//cercare dei nomi 
 		public void mostraMessaggio(String messaggio) {
-			System.out.print(messaggio);
+			
+			//prima l' output era la console, adesso una stringa memorizzata 
+			stringaOutput = messaggio;
 			
 			
 		}
 
 		
 		public String prendiIstruzione() {
-			String istruzione;
-			scannerDiLinee = new Scanner(System.in);
+			//debbo costruire io i comandi per il testing
+			costruisciIstruzione("vai","est");			
 			
-			istruzione = scannerDiLinee.nextLine();
 			
-			return istruzione;
+			//spostata la responsabilità in costruisciIscrizione
+			//this.comandoAttuale = istruzione;		//giusto? se ho due paramentri
+			//this.comandiDigitati.add(comandoAttuale);
+			
+			return comandoAttuale;
+			
+			
 		}
 		
 		
 		public void chiudiScanner() {
-			scannerDiLinee.close();
+			System.out.print("Fine Testing");
 		}
 		
-		
-		//funzioni da aggiungere all' interfaccia per favorire il testing 
-		public void aggiungiIstruzione(String istruzione) {
-			comandoAttuale = istruzione;		//giusto? se ho due paramentri
-			comandiDigitati.add(comandoAttuale);
 	
-			
-		}
 
-//getters and setters for easy cucumber testing
+
+		//costruisce le istruzioni per il testin richiamdo delle funzioni in sequenza
+		public void costruisciIstruzione(String parametro1,String parametro2) {
+			if(parametro2==null) {
+				this.comandoAttuale= parametro1;
+				this.getComandiDigitati().add(parametro1);
+			}
+			else{
+				//senno' vuol dire che il comando ha due parametri
+				this.comandoAttuale= parametro2;
+				this.getComandiDigitati().add(parametro1);
+				this.getComandiDigitati().add(parametro2);
+			}
+		}
+		
 
 		public String getComandoAttuale() {
 			return comandoAttuale;
@@ -80,6 +97,10 @@ public class StringheIO implements InterfacciaUtente{
 			this.comandiDigitati = comandiDigitati;
 		}
 		
+	
+
+
+	
 		
 		
 		
