@@ -91,18 +91,6 @@ public class StepDefinition {
 	    comandi = new ArrayList<String>();
 	}
 
-	
-	
-/*
-	@When("^I digit command(\\d+) \"([^\"]*)\" and command(\\d+) \"([^\"]*)\"$")
-	public void i_digit_command_and_command(int arg1, String comandoIniettato, int arg3, String parametroIniettato) throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	   comando = comandoIniettato;
-	   parametro =parametroIniettato;
-	   helper.getMyInterfacciaUtente().setComandoAttuale(comando);
-	   helper.getMyInterfacciaUtente().setParametroAttuale(parametro);
-	}
-*/	
 	@When("^I digit command(\\d+) \"([^\"]*)\" and command(\\d+)\"([^\"]*)\"$")
 	public void i_digit_command_and_command(int arg1, String comandoIniettato, int arg3, String parametroIniettato) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions

@@ -15,7 +15,7 @@ public class StringheIO implements InterfacciaUtente{
 	
 	private List<String> comandiDigitati;
 	
-	private String stringaOutput;
+	//private String stringaOutput;					non mi serve al fine del testing
 	
 	
 	
@@ -23,18 +23,18 @@ public class StringheIO implements InterfacciaUtente{
 		comandoAttuale = new String();
 		parametroAttuale = new String();
 		comandiDigitati = new ArrayList<String>();
-		stringaOutput = new String();
+		//stringaOutput = new String();
 	}
 	
 	
 	
-	//mostra messaggio spostato direttamente in scrittore? MOLTO PROBABILE
+	
 	
 	//cercare dei nomi 
 		public void mostraMessaggio(String messaggio) {
 			
 			//prima l' output era la console, adesso una stringa memorizzata 
-			stringaOutput = messaggio;
+			//stringaOutput = messaggio;
 			}
 
 		

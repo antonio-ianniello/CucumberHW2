@@ -35,7 +35,7 @@ Feature: Hw2
     Given I am in "Atrio"
     And I start the game
     When I digit command1 "vai" and command2"est"
-    Then I am in the "n10" and i have digitated "vai" and "est"
+    Then I am in the "N11" and i have digitated "vai" and "est"
     
     
 
