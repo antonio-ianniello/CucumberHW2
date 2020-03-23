@@ -20,11 +20,11 @@ public class FabbricaDiComandiAutomatici implements FabbricaDiComandi{
 
 	
 	
-	public FabbricaDiComandiAutomatici(StringheIO IO) {
+	public FabbricaDiComandiAutomatici(StringheIO IOconsole) {
 		this.nomeComando=null;
 		this.parametro=null;
 		this.comando= null;
-		this.IO = IO;
+		this.IO = IOconsole;
 		
 	}
 	
