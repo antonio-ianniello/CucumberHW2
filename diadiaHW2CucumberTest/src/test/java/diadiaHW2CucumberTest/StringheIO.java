@@ -10,8 +10,8 @@ public class StringheIO implements InterfacciaUtente{
 
 	
 	
-	private String comandoAttuale;
-	private String parametroAttuale;
+	private String nomeComando;
+	private String nomeParametro;
 	
 	private List<String> comandiDigitati;
 	
@@ -20,8 +20,8 @@ public class StringheIO implements InterfacciaUtente{
 	
 	
 	public StringheIO() {
-		comandoAttuale = new String();
-		parametroAttuale = new String();
+		nomeComando = new String();
+		nomeParametro = new String();
 		comandiDigitati = new ArrayList<String>();
 		//stringaOutput = new String();
 	}
@@ -42,7 +42,7 @@ public class StringheIO implements InterfacciaUtente{
 			//debbo costruire io i comandi per il testing
 			costruisciIstruzione("vai","est");			
 			
-			return comandoAttuale;
+			return nomeComando;
 			
 			
 		}
@@ -58,40 +58,40 @@ public class StringheIO implements InterfacciaUtente{
 		//costruisce le istruzioni per il testin richiamdo delle funzioni in sequenza
 		public void costruisciIstruzione(String parametro1,String parametro2) {
 			if(parametro2==null) {
-				this.comandoAttuale= parametro1;
-				this.parametroAttuale=null;
+				this.nomeComando= parametro1;
+				this.nomeParametro=null;
 				this.getComandiDigitati().add(parametro1);
 			}
 			else{
 				//senno' vuol dire che il comando ha due parametri
-				this.comandoAttuale= parametro1;
-				this.parametroAttuale= parametro2;
+				this.nomeComando= parametro1;
+				this.nomeParametro= parametro2;
 				this.getComandiDigitati().add(parametro1);
 				this.getComandiDigitati().add(parametro2);
 			}
 		}
 		
 
-		public String getComandoAttuale() {
-			return comandoAttuale;
+		public String getNomeComando() {
+			return nomeComando;
 		}
 
 
 
-		public void setComandoAttuale(String comandoAttuale) {
-			this.comandoAttuale = comandoAttuale;
+		public void setNomeComando(String comandoAttuale) {
+			this.nomeComando = comandoAttuale;
 		}
 		
 		
 
-		public String getParametroAttuale() {
-			return parametroAttuale;
+		public String getParametroComando() {
+			return nomeParametro;
 		}
 
 
 
-		public void setParametroAttuale(String parametroAttuale) {
-			this.parametroAttuale = parametroAttuale;
+		public void setParametroComando(String parametroAttuale) {
+			this.nomeParametro = parametroAttuale;
 		}
 
 

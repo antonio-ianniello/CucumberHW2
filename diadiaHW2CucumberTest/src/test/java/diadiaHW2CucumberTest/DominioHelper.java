@@ -38,6 +38,8 @@ public class DominioHelper {
 		this.dia.processaIstruzione(istruzioneSingola);
 	}
 	
+	
+	//metodi per semplificare la lettura dei test 
 	public Stanza getMyStanzaCorrente() {
 		return this.getMyDiaDia().getPartita().getLabirinto().getStanzaCorrente();
 	}

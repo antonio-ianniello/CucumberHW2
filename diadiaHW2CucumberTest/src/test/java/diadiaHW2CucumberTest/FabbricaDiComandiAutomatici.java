@@ -1,6 +1,5 @@
 package diadiaHW2CucumberTest;
 
-import cucumber.runtime.io.Helpers;
 import it.uniroma3.diadia.comandi.Comando;
 import it.uniroma3.diadia.comandi.ComandoAiuto;
 import it.uniroma3.diadia.comandi.ComandoFine;
@@ -31,22 +30,22 @@ public class FabbricaDiComandiAutomatici implements FabbricaDiComandi{
 
 	
 	public Comando costruisciComando(String istruzione) {
-		// TODO Auto-generated method stub
+		
 		
 	
 
-		if(IO.getParametroAttuale()==null)
-		nomeComando= IO.getComandoAttuale();
+		if(IO.getParametroComando()==null)
+		nomeComando= IO.getNomeComando();
 
-		if(IO.getParametroAttuale()!=null)
-		nomeComando = IO.getComandoAttuale();	
-		parametro=IO.getParametroAttuale();
+		if(IO.getParametroComando()!=null)
+		nomeComando = IO.getNomeComando();	
+		parametro=IO.getParametroComando();
 	
 	
 	if(nomeComando==null)
 		comando=new ComandoNonValido();
 	
-	//interfaccia untente console va dato il compito
+	
 	else if(nomeComando.equals("vai"))
 		comando= new ComandoVai();
 	else if(nomeComando.equals("prendi"))

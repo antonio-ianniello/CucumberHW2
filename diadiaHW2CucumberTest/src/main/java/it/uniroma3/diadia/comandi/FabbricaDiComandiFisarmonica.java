@@ -7,6 +7,11 @@ import java.util.Scanner;
 
 
 public class FabbricaDiComandiFisarmonica implements FabbricaDiComandi {
+	
+	
+	
+	
+	
 	public Comando costruisciComando(String istruzione) {
 		Scanner scannerDiParole= new Scanner(istruzione);
 		String nomeComando=null;
@@ -28,7 +33,7 @@ public class FabbricaDiComandiFisarmonica implements FabbricaDiComandi {
 		if(nomeComando==null)
 			comando=new ComandoNonValido();
 		
-		//interfaccia untente console va dato il compito
+		
 		else if(nomeComando.equals("vai"))
 			comando= new ComandoVai();
 		else if(nomeComando.equals("prendi"))

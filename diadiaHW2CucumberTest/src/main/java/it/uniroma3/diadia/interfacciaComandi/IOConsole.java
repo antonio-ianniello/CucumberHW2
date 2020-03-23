@@ -30,18 +30,6 @@ public class IOConsole implements InterfacciaUtente {
 		scannerDiLinee.close();
 	}
 
-
-	
-
-
-
-	
-	
-
-	
-	
-
-	
 	
 	
 

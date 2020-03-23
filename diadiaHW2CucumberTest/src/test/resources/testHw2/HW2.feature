@@ -24,9 +24,9 @@ Feature: Hw2
   Scenario: Homework 2 caso si prema help
     Given I am in "Atrio"
     And I start the game
-    When I digit command1 "help" and command2"null"
+    When I digit command1 "aiuto" and command2"null"
     
-    Then I am in the "Atrio" and i have digitated "help" and "null"
+    Then I am in the "Atrio" and i have digitated "aiuto" and "null"
     
     
     ##I start the game è importante perchè crea gli oggetti stringa del comando e dei comandi che mi servono per la testabilità
