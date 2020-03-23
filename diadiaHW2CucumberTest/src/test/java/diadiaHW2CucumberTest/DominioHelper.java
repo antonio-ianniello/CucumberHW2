@@ -1,6 +1,7 @@
 package diadiaHW2CucumberTest;
 
 import it.uniroma3.diadia.DiaDia;
+import it.uniroma3.diadia.ambienti.Stanza;
 import it.uniroma3.diadia.interfacciaComandi.InterfacciaUtente;
 
 public class DominioHelper {
@@ -36,6 +37,10 @@ public class DominioHelper {
 	
 	public void processa(String istruzioneSingola) {
 		this.dia.processaIstruzione(istruzioneSingola);
+	}
+	
+	public Stanza getMyStanzaCorrente() {
+		return this.getMyDiaDia().getPartita().getLabirinto().getStanzaCorrente();
 	}
 	
 	

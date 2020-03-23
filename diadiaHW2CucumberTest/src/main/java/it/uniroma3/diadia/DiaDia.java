@@ -89,10 +89,15 @@ public class DiaDia {
 	return this.partita.isFinita();
 	
 	}
-	
+//aggiunto get partita
+	public Partita getPartita() {
+		return partita;
+	}
 
 
-//va creata l' interfaccia utente console
+
+
+	//va creata l' interfaccia utente console
 	public static void main(String[] argc) {
 		
 		DiaDia gioco = new DiaDia(new IOConsole(),new FabbricaDiComandiFisarmonica());

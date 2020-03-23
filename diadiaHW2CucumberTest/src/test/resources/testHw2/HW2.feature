@@ -21,21 +21,21 @@ Feature: Hw2
   I want to use this template for my feature file
 
   @tag1
-  Scenario: Homework 2 win botton help
-    Given I am in atrio
+  Scenario: Homework 2 caso si prema help
+    Given I am in "Atrio"
     And I start the game
-    When digit command1"help"
+    When I digit command1 "help" and command2"null"
     
-    Then I am in the atrio and i have digitated "help"
+    Then I am in the "Atrio" and i have digitated "help" and "null"
     
     
     ##I start the game è importante perchè crea gli oggetti stringa del comando e dei comandi che mi servono per la testabilità
     @tag2
     Scenario: Homework 2 caso digita vai est
-    Given I am in atrio
+    Given I am in "Atrio"
     And I start the game
-    When I digit command1 "vai" and command2 "est"
-    Then I am in the n10 and i have digitated "est"
+    When I digit command1 "vai" and command2"est"
+    Then I am in the "n10" and i have digitated "vai" and "est"
     
     
 

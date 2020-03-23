@@ -7,12 +7,13 @@ import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
 import java.util.List;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class StepDefinition {
-	DominioHelper helper;
+	/*DominioHelper helper;
 	String comando;
 	List <String> comandi;
 	
@@ -66,5 +67,61 @@ public class StepDefinition {
 	}
 
 
+*/
+	DominioHelper helper;
+	String comando;
+	String parametro;
+	List <String> comandi;
+	
+	
+	
+	@Given("^I am in \"([^\"]*)\"$")
+	public void i_am_in(String stanzaDiPartenza) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    helper = new DominioHelper();
+	    helper.getMyDiaDia();
+	    assertEquals(stanzaDiPartenza,helper.getMyStanzaCorrente().getNome());
+	}
 
+	@Given("^I start the game$")
+	public void i_start_the_game() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    comando = new String();
+	    parametro = new String();
+	    comandi = new ArrayList<String>();
+	}
+
+	
+	
+/*
+	@When("^I digit command(\\d+) \"([^\"]*)\" and command(\\d+) \"([^\"]*)\"$")
+	public void i_digit_command_and_command(int arg1, String comandoIniettato, int arg3, String parametroIniettato) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	   comando = comandoIniettato;
+	   parametro =parametroIniettato;
+	   helper.getMyInterfacciaUtente().setComandoAttuale(comando);
+	   helper.getMyInterfacciaUtente().setParametroAttuale(parametro);
+	}
+*/	
+	@When("^I digit command(\\d+) \"([^\"]*)\" and command(\\d+)\"([^\"]*)\"$")
+	public void i_digit_command_and_command(int arg1, String comandoIniettato, int arg3, String parametroIniettato) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		   comando = comandoIniettato;
+		   parametro =parametroIniettato;
+		   helper.getMyInterfacciaUtente().setComandoAttuale(comando);
+		   helper.getMyInterfacciaUtente().setParametroAttuale(parametro);
+	}
+	
+
+	@Then("^I am in the \"([^\"]*)\" and i have digitated \"([^\"]*)\" and \"([^\"]*)\"$")
+	public void i_am_in_the_and_i_have_digitated_and(String stanzaDiArrivo, String comando, String parametroIniettato) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    assertEquals(stanzaDiArrivo,helper.getMyStanzaCorrente().getNome());
+	    
+	    //comando e parametro iniettato sono gli ulti comandi inseriti
+	    assertEquals(comando,helper.getMyInterfacciaUtente().getComandoAttuale());
+	    assertEquals(parametroIniettato,helper.getMyInterfacciaUtente().getParametroAttuale());
+	}
+	
+	
 }
