@@ -11,6 +11,7 @@ public class StringheIO implements InterfacciaUtente{
 	
 	
 	private String comandoAttuale;
+	private String parametroAttuale;
 	
 	private List<String> comandiDigitati;
 	
@@ -20,6 +21,7 @@ public class StringheIO implements InterfacciaUtente{
 	
 	public StringheIO() {
 		comandoAttuale = new String();
+		parametroAttuale = new String();
 		comandiDigitati = new ArrayList<String>();
 		stringaOutput = new String();
 	}
@@ -57,11 +59,13 @@ public class StringheIO implements InterfacciaUtente{
 		public void costruisciIstruzione(String parametro1,String parametro2) {
 			if(parametro2==null) {
 				this.comandoAttuale= parametro1;
+				this.parametroAttuale=null;
 				this.getComandiDigitati().add(parametro1);
 			}
 			else{
 				//senno' vuol dire che il comando ha due parametri
-				this.comandoAttuale= parametro2;
+				this.comandoAttuale= parametro1;
+				this.parametroAttuale= parametro2;
 				this.getComandiDigitati().add(parametro1);
 				this.getComandiDigitati().add(parametro2);
 			}
@@ -77,6 +81,20 @@ public class StringheIO implements InterfacciaUtente{
 		public void setComandoAttuale(String comandoAttuale) {
 			this.comandoAttuale = comandoAttuale;
 		}
+		
+		
+
+		public String getParametroAttuale() {
+			return parametroAttuale;
+		}
+
+
+
+		public void setParametroAttuale(String parametroAttuale) {
+			this.parametroAttuale = parametroAttuale;
+		}
+
+
 
 
 

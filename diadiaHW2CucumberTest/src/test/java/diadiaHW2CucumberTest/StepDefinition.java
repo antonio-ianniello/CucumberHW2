@@ -55,7 +55,7 @@ public class StepDefinition {
 	@Then("^I am in the n(\\d+) and i have digitated \"([^\"]*)\"$")
 	public void i_am_in_the_n_and_i_have_digitated(int arg1, String comando2) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-	assertTrue(helper.getMyInterfacciaUtente().getComandoAttuale().equals(comando2));	//ultimo comando deve essere est
+	assertTrue(helper.getMyInterfacciaUtente().getParametroAttuale().equals(comando2));	//ultimo comando deve essere est
 	
 	//elenco comandi digitati--> vai,est
 	comandi.addAll(helper.getMyInterfacciaUtente().getComandiDigitati());

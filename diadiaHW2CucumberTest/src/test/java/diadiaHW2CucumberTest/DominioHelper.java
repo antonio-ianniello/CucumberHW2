@@ -9,14 +9,17 @@ public class DominioHelper {
 	private DiaDia dia;
 	private StringheIO interfaccia;
 	private FabbricaDiComandiAutomatici fabbrica;
+	
+	
+	public DominioHelper() {
+		interfaccia= new StringheIO();
+		fabbrica = new FabbricaDiComandiAutomatici(interfaccia);
+	}
 
 
 	//instanzia diadia per il test
 	public DiaDia getMyDiaDia() {
-		if(dia==null) {
-		interfaccia= new StringheIO();
-		fabbrica = new FabbricaDiComandiAutomatici();
-		
+		if(dia==null) {		
 		//interfaccia o ce lo butto direttamente come new StringheIO? bho poi si vede
 		dia = new DiaDia(interfaccia,fabbrica);
 		//dia.gioca();			//mi fa partire il gioco, serve o devo solo iniettare il test? più provabilmente la seconda opzione

@@ -1,5 +1,6 @@
 package diadiaHW2CucumberTest;
 
+import cucumber.runtime.io.Helpers;
 import it.uniroma3.diadia.comandi.Comando;
 import it.uniroma3.diadia.comandi.ComandoAiuto;
 import it.uniroma3.diadia.comandi.ComandoFine;
@@ -12,22 +13,34 @@ import it.uniroma3.diadia.comandi.FabbricaDiComandi;
 
 public class FabbricaDiComandiAutomatici implements FabbricaDiComandi{
 
+	private String nomeComando;
+	private String parametro;
+	private Comando comando;
+	private StringheIO IO;
 
+	
+	
+	public FabbricaDiComandiAutomatici(StringheIO IO) {
+		this.nomeComando=null;
+		this.parametro=null;
+		this.comando= null;
+		this.IO = IO;
+		
+	}
 	
 
 	
 	public Comando costruisciComando(String istruzione) {
 		// TODO Auto-generated method stub
-		String nomeComando=null;
-		String parametro = null;
-		Comando comando = null;
+		
 	
 
-	
-		nomeComando= ;
+		if(IO.getParametroAttuale()==null)
+		nomeComando= IO.getComandoAttuale();
 
-	
-		parametro=;
+		if(IO.getParametroAttuale()!=null)
+		nomeComando = IO.getComandoAttuale();	
+		parametro=IO.getParametroAttuale();
 	
 	
 	if(nomeComando==null)
@@ -53,4 +66,45 @@ public class FabbricaDiComandiAutomatici implements FabbricaDiComandi{
 	return comando;
 
 }
+
+//getters and setters
+
+	public String getNomeComando() {
+		return nomeComando;
+	}
+
+
+
+	public void setNomeComando(String nomeComando) {
+		this.nomeComando = nomeComando;
+	}
+
+
+
+	public String getParametro() {
+		return parametro;
+	}
+
+
+
+	public void setParametro(String parametro) {
+		this.parametro = parametro;
+	}
+
+
+
+	public Comando getComando() {
+		return comando;
+	}
+
+
+
+	public void setComando(Comando comando) {
+		this.comando = comando;
+	}
+	
+	
+	
+	
+	
 }
