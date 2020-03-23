@@ -98,7 +98,7 @@ public class StepDefinition {
 		   parametro =parametroIniettato;
 		   helper.getMyInterfacciaUtente().setComandoAttuale(comando);
 		   helper.getMyInterfacciaUtente().setParametroAttuale(parametro);
-		   helper.processa(comando);
+		   helper.processa(comando);		//processa il comando
 		   
 	}
 	
