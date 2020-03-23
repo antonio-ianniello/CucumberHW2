@@ -1,6 +1,5 @@
 package it.uniroma3.diadia.interfacciaComandi;
 
-import java.io.Closeable;
 
 
 
