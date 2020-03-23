@@ -5,6 +5,7 @@ package it.uniroma3.diadia;
 
 
 import it.uniroma3.diadia.comandi.Comando;
+import it.uniroma3.diadia.comandi.FabbricaDiComandi;
 import it.uniroma3.diadia.comandi.FabbricaDiComandiFisarmonica;
 import it.uniroma3.diadia.interfacciaComandi.IOConsole;
 import it.uniroma3.diadia.interfacciaComandi.InterfacciaUtente;
@@ -42,10 +43,13 @@ public class DiaDia {
 	
 	private InterfacciaUtente IO;
 	
+	private FabbricaDiComandi factory;
+	
 
-	public DiaDia(InterfacciaUtente interfaccia) {
+	public DiaDia(InterfacciaUtente interfaccia,FabbricaDiComandi fabbrica) {
 		this.IO = interfaccia;
 		this.partita = new Partita();
+		this.factory=fabbrica;
 	}
 	
 	
@@ -71,9 +75,8 @@ public class DiaDia {
 	 *
 	 * @return true se l'istruzione e' eseguita e il gioco continua, false altrimenti
 	 */
-	private boolean processaIstruzione(String istruzione) {
-		Comando comandoDaEseguire;
-		FabbricaDiComandiFisarmonica factory = new FabbricaDiComandiFisarmonica();
+	public boolean processaIstruzione(String istruzione) {
+	Comando comandoDaEseguire;
 	comandoDaEseguire= factory.costruisciComando(istruzione);
 	comandoDaEseguire.esegui(this.partita);
 	
@@ -92,7 +95,7 @@ public class DiaDia {
 //va creata l' interfaccia utente console
 	public static void main(String[] argc) {
 		
-		DiaDia gioco = new DiaDia(new IOConsole());
+		DiaDia gioco = new DiaDia(new IOConsole(),new FabbricaDiComandiFisarmonica());
 		gioco.gioca();
 	}
 }

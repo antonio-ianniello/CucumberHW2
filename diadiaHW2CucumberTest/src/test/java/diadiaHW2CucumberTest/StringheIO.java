@@ -33,19 +33,12 @@ public class StringheIO implements InterfacciaUtente{
 			
 			//prima l' output era la console, adesso una stringa memorizzata 
 			stringaOutput = messaggio;
-			
-			
-		}
+			}
 
 		
 		public String prendiIstruzione() {
 			//debbo costruire io i comandi per il testing
 			costruisciIstruzione("vai","est");			
-			
-			
-			//spostata la responsabilità in costruisciIscrizione
-			//this.comandoAttuale = istruzione;		//giusto? se ho due paramentri
-			//this.comandiDigitati.add(comandoAttuale);
 			
 			return comandoAttuale;
 			
