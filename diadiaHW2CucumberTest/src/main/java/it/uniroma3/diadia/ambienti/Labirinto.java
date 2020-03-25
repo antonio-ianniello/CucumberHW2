@@ -47,8 +47,15 @@ public class Labirinto {
 		atrio.impostaStanzaAdiacente("est", aulaN11);
 		atrio.impostaStanzaAdiacente("sud", aulaN10);
 		atrio.impostaStanzaAdiacente("ovest", laboratorio);
+		
 		aulaN11.impostaStanzaAdiacente("est", laboratorio);
 		aulaN11.impostaStanzaAdiacente("ovest", atrio);
+		aulaN11.impostaStanzaAdiacente("nord", buia);
+		aulaN11.impostaStanzaAdiacente("sud", bloccata);
+		
+		bloccata.impostaStanzaAdiacente("nord", aulaN11);
+
+		
 		aulaN10.impostaStanzaAdiacente("nord", atrio);
 		aulaN10.impostaStanzaAdiacente("est", aulaN11);
 		aulaN10.impostaStanzaAdiacente("ovest", laboratorio);
