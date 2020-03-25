@@ -2,18 +2,19 @@ package diadiaHW2CucumberTest;
 
 import it.uniroma3.diadia.DiaDia;
 import it.uniroma3.diadia.ambienti.Stanza;
+import it.uniroma3.diadia.comandi.FabbricaDiComandiFisarmonica;
 
 public class DominioHelper {
 	
 	
 	private DiaDia dia;
 	private StringheIO interfaccia;
-	private FabbricaDiComandiAutomatici fabbrica;
+	private FabbricaDiComandiFisarmonica fabbrica;
 	
 	
 	public DominioHelper() {
 		interfaccia= new StringheIO();
-		fabbrica = new FabbricaDiComandiAutomatici(interfaccia);
+		fabbrica = new FabbricaDiComandiFisarmonica(interfaccia);
 	}
 
 
@@ -21,7 +22,7 @@ public class DominioHelper {
 	public DiaDia getMyDiaDia() {
 		if(dia==null) {		
 		//interfaccia o ce lo butto direttamente come new StringheIO? bho poi si vede
-		dia = new DiaDia(interfaccia,fabbrica);
+		dia = new DiaDia(interfaccia);
 		
 		}
 		
@@ -44,6 +45,10 @@ public class DominioHelper {
 		return this.getMyDiaDia().getPartita().getLabirinto().getStanzaCorrente();
 	}
 	
+	
+	public FabbricaDiComandiFisarmonica myFabbrica() {
+		return this.fabbrica;
+	}
 	
 	
 	

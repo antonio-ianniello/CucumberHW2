@@ -12,7 +12,16 @@ public interface InterfacciaUtente{
 	
 	public String prendiIstruzione();
 	
-	public void chiudiScanner();
+	public void fineRevisione();
+	
+	
+	
+	//aggiunto
+	public void costruisciIstruzione(String istruzione);
+	
+	public String getNomeIstruzione();
+	
+	public String getNomeParamaetro();
 	
 	
 	

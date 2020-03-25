@@ -2,7 +2,6 @@ package diadiaHW2CucumberTest;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 import it.uniroma3.diadia.interfacciaComandi.InterfacciaUtente;
 
@@ -10,20 +9,19 @@ public class StringheIO implements InterfacciaUtente{
 
 	
 	
-	private String nomeComando;
+	private String nomeIstruzione;
 	private String nomeParametro;
 	
 	private List<String> comandiDigitati;
 	
-	//private String stringaOutput;					non mi serve al fine del testing
 	
 	
 	
 	public StringheIO() {
-		nomeComando = new String();
+		nomeIstruzione = new String();
 		nomeParametro = new String();
 		comandiDigitati = new ArrayList<String>();
-		//stringaOutput = new String();
+		
 	}
 	
 	
@@ -34,21 +32,21 @@ public class StringheIO implements InterfacciaUtente{
 		public void mostraMessaggio(String messaggio) {
 			
 			//prima l' output era la console, adesso una stringa memorizzata 
-			//stringaOutput = messaggio;
+		//	stringaOutput = messaggio;
 			}
 
 		
 		public String prendiIstruzione() {
 			//debbo costruire io i comandi per il testing
-			costruisciIstruzione("vai","est");			
+			costruisciIstruzioneConParametro("vai","est");			
 			
-			return nomeComando;
+			return nomeIstruzione;
 			
 			
 		}
 		
 		
-		public void chiudiScanner() {
+		public void fineRevisione() {
 			System.out.print("Fine Testing");
 		}
 		
@@ -56,42 +54,28 @@ public class StringheIO implements InterfacciaUtente{
 
 
 		//costruisce le istruzioni per il testin richiamdo delle funzioni in sequenza
-		public void costruisciIstruzione(String parametro1,String parametro2) {
+		public void costruisciIstruzione(String parametro1) {
+		
+				this.nomeIstruzione= parametro1;
+				//this.nomeParametro=null;
+				this.getComandiDigitati().add(parametro1);
+		
+		}
+		
+		
+		public void costruisciIstruzioneConParametro(String parametro1,String parametro2) {
 			if(parametro2==null) {
-				this.nomeComando= parametro1;
+				this.nomeIstruzione= parametro1;
 				this.nomeParametro=null;
 				this.getComandiDigitati().add(parametro1);
 			}
 			else{
 				//senno' vuol dire che il comando ha due parametri
-				this.nomeComando= parametro1;
+				this.nomeIstruzione= parametro1;
 				this.nomeParametro= parametro2;
 				this.getComandiDigitati().add(parametro1);
 				this.getComandiDigitati().add(parametro2);
 			}
-		}
-		
-
-		public String getNomeComando() {
-			return nomeComando;
-		}
-
-
-
-		public void setNomeComando(String comandoAttuale) {
-			this.nomeComando = comandoAttuale;
-		}
-		
-		
-
-		public String getParametroComando() {
-			return nomeParametro;
-		}
-
-
-
-		public void setParametroComando(String parametroAttuale) {
-			this.nomeParametro = parametroAttuale;
 		}
 
 
@@ -107,8 +91,53 @@ public class StringheIO implements InterfacciaUtente{
 		public void setComandiDigitati(List<String> comandiDigitati) {
 			this.comandiDigitati = comandiDigitati;
 		}
+
+
+		//aggiunti da rivedrere
+
+
+		public String getNomeIstruzione() {
+			// TODO Auto-generated method stub
+			return this.nomeIstruzione;
+		}
+
+
+
+
+
+		public String getNomeParamaetro() {
+			// TODO Auto-generated method stub
+			return this.nomeParametro;
+		}
+
+
+
+
+		public void setNomeParametro(String nomeParametro) {
+			this.nomeParametro = nomeParametro;
+		}
+
+
+
+
+
+		public void setNomeIstruzione(String nomeIstruzione) {
+			this.nomeIstruzione = nomeIstruzione;
+		}
+
+
+
+
+
 		
+
+
+
+
 	
+	
+
+
 
 
 	

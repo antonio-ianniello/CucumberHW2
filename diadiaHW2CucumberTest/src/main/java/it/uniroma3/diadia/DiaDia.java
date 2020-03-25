@@ -46,10 +46,11 @@ public class DiaDia {
 	private FabbricaDiComandi factory;
 	
 
-	public DiaDia(InterfacciaUtente interfaccia,FabbricaDiComandi fabbrica) {
+	public DiaDia(InterfacciaUtente interfaccia) {
 		this.IO = interfaccia;
 		this.partita = new Partita();
-		this.factory=fabbrica;
+		//la fabrica fisarmonica dovra' essere l' unica fabbrica che si crea, l' unica cosa che cambia è l' interfaccia
+		this.factory=new FabbricaDiComandiFisarmonica(interfaccia);
 	}
 	
 	
@@ -66,7 +67,7 @@ public class DiaDia {
 		do		
 			istruzione = IO.prendiIstruzione();
 		while (!processaIstruzione(istruzione));
-		IO.chiudiScanner();
+		IO.fineRevisione();
 	}   
 
 
@@ -100,7 +101,7 @@ public class DiaDia {
 	//va creata l' interfaccia utente console
 	public static void main(String[] argc) {
 		
-		DiaDia gioco = new DiaDia(new IOConsole(),new FabbricaDiComandiFisarmonica());
+		DiaDia gioco = new DiaDia(new IOConsole());
 		gioco.gioca();
 	}
 }

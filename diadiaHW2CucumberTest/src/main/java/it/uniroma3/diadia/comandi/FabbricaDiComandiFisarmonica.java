@@ -2,37 +2,61 @@ package it.uniroma3.diadia.comandi;
 
 
 
-import java.util.Scanner;
+
+import it.uniroma3.diadia.interfacciaComandi.InterfacciaUtente;
 
 
-
+//non più utilizzataa si usa la stessa fabbrica
 public class FabbricaDiComandiFisarmonica implements FabbricaDiComandi {
 	
 	
+	private String nomeComando;
+	private String parametro;
+	private Comando comando;
+	private InterfacciaUtente interfaccia;
 	
+	public FabbricaDiComandiFisarmonica(InterfacciaUtente tipoInterfaccia) {
+		this.nomeComando=null;
+		this.parametro = null;
+		this.comando = null;
+		this.interfaccia = tipoInterfaccia;
+	}
 	
 	
 	public Comando costruisciComando(String istruzione) {
-		Scanner scannerDiParole= new Scanner(istruzione);
-		String nomeComando=null;
-		String parametro = null;
-		Comando comando = null;
+		
+		this.interfaccia.costruisciIstruzione(istruzione);
 		
 		
+		//if(interfaccia.getNomeIstruzione()!=null  && interfaccia.getNomeParamaetro()!=null) {
+		//	nomeComando= interfaccia.getNomeIstruzione();
+			//parametro =interfaccia.getNomeParamaetro();
+	/*		
+			System.out.print(nomeComando+" è il nome che riceve il comando\n");
+			System.out.print(parametro+" è il parametro che riceve il comando\n");
+		}
+		
+		
+		if(interfaccia.getNomeIstruzione()!=null) {
+			nomeComando = interfaccia.getNomeIstruzione();
+			System.out.print(nomeComando+" è il nome che riceve il comando\n");
+			System.out.print(parametro+" è il parametro che riceve il comando\n");
+		}
+		
+		*/
+			
+			if(interfaccia.getNomeParamaetro()==null) {
+				this.nomeComando = interfaccia.getNomeIstruzione();
+			}
+			if(interfaccia.getNomeParamaetro()!=null) {
+				this.nomeComando = interfaccia.getNomeIstruzione();
+				this.parametro = interfaccia.getNomeParamaetro();
+			}
 
-
-
-
-		if(scannerDiParole.hasNext())
-			nomeComando= scannerDiParole.next();
-
-		if(scannerDiParole.hasNext())
-			parametro= scannerDiParole.next();
-		scannerDiParole.close();
 		
 		if(nomeComando==null)
 			comando=new ComandoNonValido();
-		
+//fino qui		
 		
 		else if(nomeComando.equals("vai"))
 			comando= new ComandoVai();

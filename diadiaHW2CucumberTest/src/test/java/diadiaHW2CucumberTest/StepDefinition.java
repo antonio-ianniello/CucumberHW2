@@ -96,8 +96,8 @@ public class StepDefinition {
 	    // Write code here that turns the phrase above into concrete actions
 		   comando = comandoIniettato;
 		   parametro =parametroIniettato;
-		   helper.getMyInterfacciaUtente().setNomeComando(comando);
-		   helper.getMyInterfacciaUtente().setParametroComando(parametro);
+		   helper.getMyInterfacciaUtente().setNomeIstruzione(comandoIniettato);
+		   helper.getMyInterfacciaUtente().setNomeParametro(parametroIniettato);
 		   helper.processa(comando);		//processa il comando
 		   
 	}
@@ -109,8 +109,8 @@ public class StepDefinition {
 	    assertEquals(stanzaDiArrivo,helper.getMyStanzaCorrente().getNome());
 	    
 	    //comando e parametro iniettato sono gli ulti comandi inseriti
-	    assertEquals(comando,helper.getMyInterfacciaUtente().getNomeComando());
-	    assertEquals(parametroIniettato,helper.getMyInterfacciaUtente().getParametroComando());
+	    assertEquals(comando,helper.getMyInterfacciaUtente().getNomeIstruzione());
+	    assertEquals(parametroIniettato,helper.getMyInterfacciaUtente().getNomeParamaetro());
 	}
 	
 	
