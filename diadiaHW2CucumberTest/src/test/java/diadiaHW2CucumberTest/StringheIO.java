@@ -36,8 +36,10 @@ public class StringheIO implements InterfacciaUtente{
 			}
 
 		
+		
+		//debbo costruire io i comandi per il testing, qui vanno tutti i comandi che devo simulare
 		public String prendiIstruzione() {
-			//debbo costruire io i comandi per il testing
+			
 			costruisciIstruzioneConParametro("vai","est");			
 			
 			return nomeIstruzione;
@@ -57,7 +59,6 @@ public class StringheIO implements InterfacciaUtente{
 		public void costruisciIstruzione(String parametro1) {
 		
 				this.nomeIstruzione= parametro1;
-				//this.nomeParametro=null;
 				this.getComandiDigitati().add(parametro1);
 		
 		}
