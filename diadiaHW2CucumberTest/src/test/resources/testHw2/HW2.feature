@@ -29,13 +29,38 @@ Feature: Hw2
     Then I am in the "Atrio" and i have digitated "aiuto" and "null"
     
     
-    ##I start the game è importante perchè crea gli oggetti stringa del comando e dei comandi che mi servono per la testabilità
+    ##questi scenari sotto servono per capire se il labirinto sia corretto
     @tag2
     Scenario: Homework 2 caso digita vai est
     Given I am in "Atrio"
     And I start the game
     When I digit command1 "vai" and command2"est"
     Then I am in the "Aula N11" and i have digitated "vai" and "est"
+    
+    @tag3
+    Scenario:Homeworl 2 caso digita vai ovest
+    Given I am in "Atrio"
+    And I start the game
+    When I digit command1 "vai" and command2"ovest"
+    
+    Then I am in the "Laboratorio Campus" and i have digitated "vai" and "ovest"
+    
+     @tag4
+    Scenario:Homeworl 2 caso digita vai nord
+    Given I am in "Atrio"
+    And I start the game
+    When I digit command1 "vai" and command2"nord"
+    
+    Then I am in the "Biblioteca" and i have digitated "vai" and "nord"
+    
+    
+    @tag5
+    Scenario:Homeworl 2 caso digita vai ovest 2 volte
+    Given I am in "Atrio"
+    And I start the game
+    When I digit command1 "vai" and command2"ovest"
+    When I digit command1 "vai" and command2"ovest"    
+    Then I am in the "Aula N11" and i have digitated "vai" and "ovest"
     
     
 
