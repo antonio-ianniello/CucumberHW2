@@ -27,9 +27,7 @@ public class Labirinto {
 		/* crea gli attrezzi */
     	Attrezzo lanterna = new Attrezzo("lanterna",3);
 		Attrezzo osso = new Attrezzo("osso",1);
-		Attrezzo lama = new Attrezzo("lama",2);
-		Attrezzo spada = new Attrezzo("spada",5);
-		Attrezzo leggendario = new Attrezzo("leggendario",7);
+	
         Attrezzo chiave = new Attrezzo("chiave",1);
         
 		/* crea stanze del labirinto */
@@ -38,16 +36,14 @@ public class Labirinto {
 		Stanza aulaN10 = new Stanza("Aula N10");
 		Stanza laboratorio = new Stanza("Laboratorio Campus");
 		Stanza biblioteca = new Stanza("Biblioteca");
-		Stanza maledetta = new Stanza("Maledetta");
-		StanzaBuia batcaverna = new StanzaBuia("batcaverna","lanterna");
-		StanzaBloccata scorciatoia = new StanzaBloccata("scorciatoia","nord","chiave");
+		
+		StanzaBuia buia = new StanzaBuia("Buia","lanterna");
+		StanzaBloccata bloccata = new StanzaBloccata("Bloccata","nord","chiave");
 		
 		/* collega le stanze */
-		scorciatoia.impostaStanzaAdiacente("sud", atrio);
-		scorciatoia.impostaStanzaAdiacente("nord", biblioteca);
-		batcaverna.impostaStanzaAdiacente("est",maledetta );
-		maledetta.impostaStanzaAdiacente("ovest", batcaverna);
-		atrio.impostaStanzaAdiacente("nord",scorciatoia);
+		
+		
+		atrio.impostaStanzaAdiacente("nord",biblioteca);
 		atrio.impostaStanzaAdiacente("est", aulaN11);
 		atrio.impostaStanzaAdiacente("sud", aulaN10);
 		atrio.impostaStanzaAdiacente("ovest", laboratorio);
@@ -58,19 +54,16 @@ public class Labirinto {
 		aulaN10.impostaStanzaAdiacente("ovest", laboratorio);
 		laboratorio.impostaStanzaAdiacente("est", atrio);
 		laboratorio.impostaStanzaAdiacente("ovest", aulaN11);
-		biblioteca.impostaStanzaAdiacente("sud", scorciatoia);
-		laboratorio.impostaStanzaAdiacente("nord", maledetta);
-		maledetta.impostaStanzaAdiacente("sud", laboratorio);
-		maledetta.impostaStanzaAdiacente("est", biblioteca);
-		biblioteca.impostaStanzaAdiacente("ovest", maledetta);
+		
+		
 		
         /* pone gli attrezzi nelle stanze */
-		aulaN10.addAttrezzo(lanterna);
+		atrio.addAttrezzo(lanterna);
 		atrio.addAttrezzo(osso);
-		aulaN10.addAttrezzo(lama);
-		batcaverna.addAttrezzo(chiave);		
-		maledetta.addAttrezzo(leggendario);
-		aulaN11.addAttrezzo(spada);
+		
+		buia.addAttrezzo(chiave);		
+	
+		
 		atrio.addAttrezzo(chiave);
 		
 
