@@ -40,7 +40,7 @@ public class StringheIO implements InterfacciaUtente{
 		//debbo costruire io i comandi per il testing, qui vanno tutti i comandi che devo simulare
 		public String prendiIstruzione() {
 			
-			costruisciIstruzioneConParametro("vai","est");			
+			//costruisciIstruzioneConParametro("vai","est");			//non serve, gli di i comandi dal test		
 			
 			return nomeIstruzione;
 			
@@ -63,7 +63,7 @@ public class StringheIO implements InterfacciaUtente{
 		
 		}
 		
-		
+		/*		non serve 
 		public void costruisciIstruzioneConParametro(String parametro1,String parametro2) {
 			if(parametro2==null) {
 				this.nomeIstruzione= parametro1;
@@ -79,7 +79,7 @@ public class StringheIO implements InterfacciaUtente{
 			}
 		}
 
-
+*/
 
 
 
