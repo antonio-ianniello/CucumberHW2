@@ -69,8 +69,7 @@ public class StepDefinition {
 
 */
 	DominioHelper helper;
-	String comando;
-	String parametro;
+
 	List <String> comandi;
 	
 	
@@ -86,19 +85,17 @@ public class StepDefinition {
 	@Given("^I start the game$")
 	public void i_start_the_game() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-	    comando = new String();
-	    parametro = new String();
+	  
 	    comandi = new ArrayList<String>();
 	}
 
 	@When("^I digit command(\\d+) \"([^\"]*)\" and command(\\d+)\"([^\"]*)\"$")
 	public void i_digit_command_and_command(int arg1, String comandoIniettato, int arg3, String parametroIniettato) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-		   comando = comandoIniettato;
-		   parametro =parametroIniettato;
+		   
 		   helper.getMyInterfacciaUtente().setNomeIstruzione(comandoIniettato);
 		   helper.getMyInterfacciaUtente().setNomeParametro(parametroIniettato);
-		   helper.processa(comando);		//processa il comando
+		   helper.processa(comandoIniettato);		//processa il comando
 		   
 	}
 	
