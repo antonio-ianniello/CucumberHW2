@@ -59,7 +59,7 @@ Feature: Hw2
     Given I am in "Atrio"
     And I start the game
     When I digit command1 "vai" and command2"ovest"
-    When I digit command1 "vai" and command2"ovest"    
+    And I digit command1 "vai" and command2"ovest"    
     Then I am in the "Aula N11" and i have digitated "vai" and "ovest"
     
     
