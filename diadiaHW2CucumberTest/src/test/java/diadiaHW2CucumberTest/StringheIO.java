@@ -38,7 +38,7 @@ public class StringheIO implements InterfacciaUtente{
 		
 		
 		//debbo costruire io i comandi per il testing, qui vanno tutti i comandi che devo simulare
-		public String prendiIstruzione() {
+		public String leggiIstruzione() {
 			
 			//costruisciIstruzioneConParametro("vai","est");			//non serve, gli di i comandi dal test		
 			

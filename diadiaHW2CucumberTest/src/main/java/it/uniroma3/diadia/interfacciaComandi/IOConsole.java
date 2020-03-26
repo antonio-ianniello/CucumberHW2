@@ -28,7 +28,7 @@ public class IOConsole implements InterfacciaUtente {
 	}
 
 	
-	public String prendiIstruzione() {
+	public String leggiIstruzione() {
 		String istruzione;
 		scannerDiLinee = new Scanner(System.in);
 		
