@@ -63,4 +63,15 @@ Feature: Hw2
     Then I am in the "Aula N11" and i have digitated "vai" and "ovest"
     
     
+       @tag5
+    Scenario:Homeworl 2 caso stanza bloccata
+    Given I am in "Atrio"
+    And I start the game
+    When I digit command1 "vai" and command2"est"
+    When I digit command1 "vai" and command2"sud"  
+    Then I am in the "Bloccata" and i have digitated "vai" and "sud"
+    When I digit command1 "vai" and command2"nord"   
+    Then I am in the "Bloccata" and i have digitated "vai" and "nord"
+    
+    
 
