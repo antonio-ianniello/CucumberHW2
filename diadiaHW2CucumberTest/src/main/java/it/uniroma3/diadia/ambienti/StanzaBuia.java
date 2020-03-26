@@ -3,7 +3,8 @@ package it.uniroma3.diadia.ambienti;
 
 
 public class StanzaBuia extends Stanza{
-	public static final String BUIO = "qui c'è un buio pesto!Forse è il caso di trovare un oggetto luminoso...";
+	
+	public  static final String BUIO = "qui c'è un buio pesto!Forse è il caso di trovare un oggetto luminoso...";
 	private String attrezzoLuce;
 
 	public StanzaBuia(String nome,String nomeAttrezzo) {
@@ -37,4 +38,19 @@ public class StanzaBuia extends Stanza{
 		}
 		return risultato.toString();
 	}
+	
+	
+	public String getAttrezzoLuce() {
+		return attrezzoLuce;
+	}
+	public void setAttrezzoLuce(String attrezzoLuce) {
+		this.attrezzoLuce = attrezzoLuce;
+	}
+	
+	//FONDAMENTALE CHE CI SIA
+	public static String getBuio() {
+		return BUIO;
+	}
+	
+	
 }

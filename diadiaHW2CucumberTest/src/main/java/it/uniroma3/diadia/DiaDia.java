@@ -56,7 +56,7 @@ public class DiaDia {
 	
 	
 
-	public void gioca() {
+	private void gioca() {
 		String istruzione; 
 		
 		
@@ -76,6 +76,8 @@ public class DiaDia {
 	 *
 	 * @return true se l'istruzione e' eseguita e il gioco continua, false altrimenti
 	 */
+	
+	//public per forza per il testing
 	public boolean processaIstruzione(String istruzione) {
 	Comando comandoDaEseguire;
 	comandoDaEseguire= factory.costruisciComando(istruzione);

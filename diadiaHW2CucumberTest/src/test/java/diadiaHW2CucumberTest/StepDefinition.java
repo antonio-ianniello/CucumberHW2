@@ -11,6 +11,7 @@ import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import it.uniroma3.diadia.ambienti.StanzaBuia;
 
 public class StepDefinition {
 	/*DominioHelper helper;
@@ -109,6 +110,7 @@ public class StepDefinition {
 	    assertEquals(comando,helper.getMyInterfacciaUtente().getNomeIstruzione());
 	    assertEquals(parametroIniettato,helper.getMyInterfacciaUtente().getNomeParamaetro());
 	}
+
 	
 	
 }
