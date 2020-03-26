@@ -46,7 +46,7 @@ public class DominioHelper {
 	}
 	
 	
-	public FabbricaDiComandiFisarmonica myFabbrica() {
+	public FabbricaDiComandiFisarmonica getmyFabbrica() {
 		return this.fabbrica;
 	}
 	

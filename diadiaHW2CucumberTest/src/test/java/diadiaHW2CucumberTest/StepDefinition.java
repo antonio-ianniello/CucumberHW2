@@ -114,6 +114,10 @@ public class StepDefinition {
 	    //comando e parametro iniettato sono gli ulti comandi inseriti
 	    assertEquals(comando,helper.getMyInterfacciaUtente().getNomeIstruzione());
 	    assertEquals(parametroIniettato,helper.getMyInterfacciaUtente().getNomeParamaetro());
+	    
+	   
+	    
+	    
 	}
 
 	
