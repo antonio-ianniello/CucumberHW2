@@ -110,20 +110,15 @@ public class IOString implements IO{
 
 
 		public String getNomeIstruzione() {
-			// TODO Auto-generated method stub
+			
 			return this.nomeIstruzione;
 		}
 
 
-
-
-
 		public String getNomeParamaetro() {
-			// TODO Auto-generated method stub
+			
 			return this.nomeParametro;
 		}
-
-
 
 
 		public void setNomeParametro(String nomeParametro) {
@@ -131,17 +126,16 @@ public class IOString implements IO{
 		}
 
 
-
-
-
 		public void setNomeIstruzione(String nomeIstruzione) {
 			this.nomeIstruzione = nomeIstruzione;
 		}
 
 
-
-
-
+		//metodo richiamato per creare l' intera stringa
+		public void setInteraStringa(String s) {
+			this.riga = s;
+			costruisciIstruzione(riga);
+		}
 
 
 
