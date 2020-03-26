@@ -94,9 +94,13 @@ public class StepDefinition {
 	public void i_digit_command_and_command(int arg1, String comandoIniettato, int arg3, String parametroIniettato) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 		   
-		   helper.getMyInterfacciaUtente().setNomeIstruzione(comandoIniettato);
-		   helper.getMyInterfacciaUtente().setNomeParametro(parametroIniettato);
-		   helper.processa(comandoIniettato);		//processa il comando
+		  helper.getMyInterfacciaUtente().setNomeIstruzione(comandoIniettato);
+		  helper.getMyInterfacciaUtente().setNomeParametro(parametroIniettato);
+		   
+		   
+	
+		 helper.processa(comandoIniettato+" "+parametroIniettato);		//processa qualsiasi comando digitato correttamente
+		   
 		   
 	}
 	

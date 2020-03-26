@@ -5,19 +5,14 @@ import java.util.Scanner;
 import it.uniroma3.diadia.comandi.ComandoNonValido;
 
 
-public class IOConsole implements InterfacciaUtente {
+public class IOConsole implements IO {
 	
-	private String nomeIstruzione;
-	private String nomeParametro;
+	
 	
 	
 	private Scanner scannerDiLinee;
 	
-	
-	public IOConsole() {
-		nomeIstruzione= new String();
-		nomeParametro = new String();
-	}
+
 	
 
 //mostra messaggio spostato direttamente in scrittore? MOLTO PROBABILE
@@ -28,7 +23,7 @@ public class IOConsole implements InterfacciaUtente {
 	}
 
 	
-	public String leggiIstruzione() {
+	public String leggiRiga() {
 		String istruzione;
 		scannerDiLinee = new Scanner(System.in);
 		
@@ -38,14 +33,12 @@ public class IOConsole implements InterfacciaUtente {
 	}
 	
 	
-	public void fineRevisione() {
-		scannerDiLinee.close();
-	}
+	
 
 	
 	//aggiunti
 	//metodo richiamato dalla farbbcia del comando per impostare i parametri 
-	public void costruisciIstruzione(String istruzione) {
+	/*public void costruisciIstruzione(String istruzione) {
 		
 		Scanner scannerDiParole= new Scanner(istruzione);
 		
@@ -65,19 +58,9 @@ public class IOConsole implements InterfacciaUtente {
 		
 		
 	}
+*/
 
 
-	public String getNomeIstruzione() {
-		// TODO Auto-generated method stub
-		return this.nomeIstruzione;
-		
-	}
-
-
-	public String getNomeParamaetro() {
-		// TODO Auto-generated method stub
-		return this.nomeParametro;
-	}
 	
 	
 

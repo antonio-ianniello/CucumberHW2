@@ -2,10 +2,11 @@ package diadiaHW2CucumberTest;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
-import it.uniroma3.diadia.interfacciaComandi.InterfacciaUtente;
+import it.uniroma3.diadia.interfacciaComandi.IO;
 
-public class StringheIO implements InterfacciaUtente{
+public class IOString implements IO{
 
 	
 	
@@ -15,12 +16,13 @@ public class StringheIO implements InterfacciaUtente{
 	private List<String> comandiDigitati;
 	
 	
+	private String riga;
 	
-	
-	public StringheIO() {
+	public IOString() {
 		nomeIstruzione = new String();
 		nomeParametro = new String();
 		comandiDigitati = new ArrayList<String>();
+		this.riga = new String();
 		
 	}
 	
@@ -38,48 +40,58 @@ public class StringheIO implements InterfacciaUtente{
 		
 		
 		//debbo costruire io i comandi per il testing, qui vanno tutti i comandi che devo simulare
-		public String leggiIstruzione() {
+		public String leggiRiga() {
 			
-			//costruisciIstruzioneConParametro("vai","est");			//non serve, gli di i comandi dal test		
 			
-			return nomeIstruzione;
-			
+		//	return nomeIstruzione+" "+nomeParametro;
+			return riga;
 			
 		}
 		
 		
-		public void fineRevisione() {
-			System.out.print("Fine Testing");
-		}
 		
 	
 
-
 		//costruisce le istruzioni per il testin richiamdo delle funzioni in sequenza
-		public void costruisciIstruzione(String parametro1) {
-		
-				this.nomeIstruzione= parametro1;
-				this.getComandiDigitati().add(parametro1);
-		
-		}
-		
-		/*		non serve 
-		public void costruisciIstruzioneConParametro(String parametro1,String parametro2) {
-			if(parametro2==null) {
-				this.nomeIstruzione= parametro1;
-				this.nomeParametro=null;
-				this.getComandiDigitati().add(parametro1);
+		public String costruisciIstruzione(String riga) {
+			
+			if(riga.contains(" ")) {
+			String[] parole = riga.split(" ");
+			
+			
+			
+			if(parole[0]!=null && parole[1]==null) {
+				this.nomeIstruzione = parole[0];
 			}
-			else{
-				//senno' vuol dire che il comando ha due parametri
-				this.nomeIstruzione= parametro1;
-				this.nomeParametro= parametro2;
-				this.getComandiDigitati().add(parametro1);
-				this.getComandiDigitati().add(parametro2);
+			else {
+				this.nomeIstruzione = parole[0];
+				this.nomeParametro = parole[1];
 			}
-		}
+			}
+			
+			
+			
+			/*
+			Scanner scannerDiParole = new Scanner(riga);
 
-*/
+			// prima parola: nome del comando
+			if (scannerDiParole.hasNext())
+				this.nomeIstruzione = scannerDiParole.next(); 
+
+			// seconda parola: eventuale parametro
+			if (scannerDiParole.hasNext())
+				this.nomeParametro = scannerDiParole.next();
+			scannerDiParole.close();
+			
+				//this.nomeIstruzione= parametro1;
+				//this.getComandiDigitati().add(parametro1);
+			*/
+		
+			return riga;
+		
+			
+		}
+		
 
 
 
@@ -94,7 +106,7 @@ public class StringheIO implements InterfacciaUtente{
 		}
 
 
-		//aggiunti da rivedrere
+		//aggiunti 
 
 
 		public String getNomeIstruzione() {
@@ -125,6 +137,13 @@ public class StringheIO implements InterfacciaUtente{
 		public void setNomeIstruzione(String nomeIstruzione) {
 			this.nomeIstruzione = nomeIstruzione;
 		}
+
+
+
+
+
+
+
 
 
 

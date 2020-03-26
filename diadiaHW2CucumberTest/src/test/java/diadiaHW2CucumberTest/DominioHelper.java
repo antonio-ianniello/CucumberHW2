@@ -8,12 +8,12 @@ public class DominioHelper {
 	
 	
 	private DiaDia dia;
-	private StringheIO interfaccia;
+	private IOString interfaccia;
 	private FabbricaDiComandiFisarmonica fabbrica;
 	
 	
 	public DominioHelper() {
-		interfaccia= new StringheIO();
+		interfaccia= new IOString();
 		fabbrica = new FabbricaDiComandiFisarmonica(interfaccia);
 	}
 
@@ -31,7 +31,7 @@ public class DominioHelper {
 	}
 	
 	
-	public StringheIO getMyInterfacciaUtente() {
+	public IOString getMyInterfacciaUtente() {
 		return this.interfaccia;
 	}
 	

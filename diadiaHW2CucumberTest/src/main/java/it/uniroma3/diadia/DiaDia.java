@@ -8,7 +8,7 @@ import it.uniroma3.diadia.comandi.Comando;
 import it.uniroma3.diadia.comandi.FabbricaDiComandi;
 import it.uniroma3.diadia.comandi.FabbricaDiComandiFisarmonica;
 import it.uniroma3.diadia.interfacciaComandi.IOConsole;
-import it.uniroma3.diadia.interfacciaComandi.InterfacciaUtente;
+import it.uniroma3.diadia.interfacciaComandi.IO;
 
 
 
@@ -41,12 +41,12 @@ public class DiaDia {
 	
 	private Partita partita;
 	
-	private InterfacciaUtente IO;
+	private IO IO;
 	
 	private FabbricaDiComandi factory;
 	
 
-	public DiaDia(InterfacciaUtente interfaccia) {
+	public DiaDia(IO interfaccia) {
 		this.IO = interfaccia;
 		this.partita = new Partita();
 		//la fabrica fisarmonica dovra' essere l' unica fabbrica che si crea, l' unica cosa che cambia è l' interfaccia
@@ -65,9 +65,9 @@ public class DiaDia {
 		this.IO.mostraMessaggio(MESSAGGIO_BENVENUTO);
 		
 		do		
-			istruzione = IO.leggiIstruzione();
+			istruzione = IO.leggiRiga();
 		while (!processaIstruzione(istruzione));
-		IO.fineRevisione();
+		//IO.fineRevisione();
 	}   
 
 

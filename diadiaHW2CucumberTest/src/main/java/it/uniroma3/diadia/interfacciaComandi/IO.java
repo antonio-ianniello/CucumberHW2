@@ -4,14 +4,16 @@ package it.uniroma3.diadia.interfacciaComandi;
 
 
 //closable
-public interface InterfacciaUtente{
+public interface IO{
 
 	
 	
 	public void mostraMessaggio(String messaggio);
 	
-	public String leggiIstruzione();
+	public String leggiRiga();
 	
+	
+	/*
 	public void fineRevisione();
 	
 	
@@ -24,7 +26,7 @@ public interface InterfacciaUtente{
 	public String getNomeParamaetro();
 	
 	
-	
+	*/
 	
 	
 }
