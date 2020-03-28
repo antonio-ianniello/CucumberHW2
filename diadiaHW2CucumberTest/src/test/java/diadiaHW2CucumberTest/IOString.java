@@ -132,7 +132,7 @@ public class IOString implements IO{
 
 
 		//metodo richiamato per creare l' intera stringa
-		public void setInteraStringa(String s) {
+		public void setInteraIstruzione(String s) {
 			this.riga = s;
 			costruisciIstruzione(riga);
 		}

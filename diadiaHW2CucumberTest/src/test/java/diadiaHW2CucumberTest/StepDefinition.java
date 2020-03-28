@@ -97,7 +97,7 @@ public class StepDefinition {
 		 // helper.getMyInterfacciaUtente().setNomeIstruzione(comandoIniettato);
 		 // helper.getMyInterfacciaUtente().setNomeParametro(parametroIniettato);
 		   
-		 helper.getMyInterfacciaUtente().setInteraStringa(comandoIniettato+" "+parametroIniettato);
+		 helper.getMyInterfacciaUtente().setInteraIstruzione(comandoIniettato+" "+parametroIniettato);
 		 
 		 //processa in automatico la stringa corretta formata dai domandi in input al test
 		 helper.processa(comandoIniettato+" "+parametroIniettato);		//processa qualsiasi comando digitato correttamente
