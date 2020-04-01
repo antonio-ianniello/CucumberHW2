@@ -1,5 +1,4 @@
 package diadiaHW2CucumberTest;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -16,16 +15,13 @@ public class TestableIO implements IO{
 		this.messaggi = new ArrayList<String>();
 		this.rigaAttuale = new String();
 	}
-//output,lo salviamo nella lista messaggi
+
 	public void mostraMessaggio(String messaggio) {
 		this.messaggi.add(messaggio);
 	}
-//metodo IO ogni volta che richiamo leggi riga si dovrebbe aggiornare
-	public String leggiRiga() {
-		
-		
-		System.out.println("\nQueste sono le righe immesse"+righe);
-		
+
+	public String leggiRiga() {		
+		//System.out.println("\nQueste sono le righe immesse"+righe);		
 		return rigaAttuale;
 	}
 
@@ -36,27 +32,25 @@ public class TestableIO implements IO{
 	public List<String> getMessaggi() {
 		return messaggi;
 	}
-	
-	public TestableIO addRiga(String... riga) {
+
+	public TestableIO addRiga(String... riga) {			//purtroppo dovrei usare List<String> in java come parametro e DataTable in cucumber
 		this.rigaAttuale= riga[0];
 		this.righe.addAll(Arrays.asList(riga));
 		return this;
 	}
-	
+
 	public TestableIO addRigaSingola(String riga) {
 		this.rigaAttuale = riga;
 		this.righe.add(riga);
 		return this;
 	}
-	
+
 	public String getUltimaRiga(){		
-		return righe.get(righe.size()-1);
-		
-	}
-	
-	public String getUltimoMessaggio(){		
-		return messaggi.get(messaggi.size()-1);
-		
+		return righe.get(righe.size()-1);		
 	}
 
+	public String getUltimoMessaggio(){		
+		return messaggi.get(messaggi.size()-1);
+
+	}
 }
