@@ -29,3 +29,16 @@ Feature: HomeWork 2 Testing
   Given Ho iniziato il gioco
   When ho digitato il comando "vai ovest"
   Then il risultato della esecuzione dovrebbe contenere "Laboratorio Campus"
+  
+  @tag4
+  Scenario:Homeworl 2 caso digita vai nord
+  Given Ho iniziato il gioco
+  When ho digitato il comando "vai nord"
+  Then il risultato della esecuzione dovrebbe contenere "Biblioteca"
+  
+  @tag5
+    Scenario:Homeworl 2 caso digita vai ovest 2 volte
+    Given Ho iniziato il gioco
+    When ho digitato il comando "vai ovest"
+    When ho digitato il comando "vai ovest" 
+    Then il risultato della esecuzione dovrebbe contenere "Aula N11"
