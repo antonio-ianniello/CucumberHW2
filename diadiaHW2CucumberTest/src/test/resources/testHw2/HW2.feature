@@ -21,89 +21,15 @@ Feature: Hw2
   I want to use this template for my feature file
 
   @tag1
-  Scenario: Homework 2 caso si prema help
-    Given I am in "Atrio"
-    And I start the game
-    When I digit command1 "aiuto" and command2"null"
-    
-    Then I am in the "Atrio" and i have digitated "aiuto" and "null"
-    
-    
-    ##questi scenari sotto servono per capire se il labirinto sia corretto
-    @tag2
-    Scenario: Homework 2 caso digita vai est
-    Given I am in "Atrio"
-    And I start the game
-    When I digit command1 "vai" and command2"est"
-    Then I am in the "Aula N11" and i have digitated "vai" and "est"
-    
-    @tag3
-    Scenario: Homewor 2 caso digita vai ovest
-    Given I am in "Atrio"
-    And I start the game
-    When I digit command1 "vai" and command2"ovest"
-    
-    Then I am in the "Laboratorio Campus" and i have digitated "vai" and "ovest"
-    
-     @tag4
-    Scenario:Homeworl 2 caso digita vai nord
-    Given I am in "Atrio"
-    And I start the game
-    When I digit command1 "vai" and command2"nord"
-    
-    Then I am in the "Biblioteca" and i have digitated "vai" and "nord"
-    
-    
-    @tag5
-    Scenario:Homeworl 2 caso digita vai ovest 2 volte
-    Given I am in "Atrio"
-    And I start the game
-    When I digit command1 "vai" and command2"ovest"
-    And I digit command1 "vai" and command2"ovest"    
-    Then I am in the "Aula N11" and i have digitated "vai" and "ovest"
-    
-    
-    @tag6
-    Scenario:Homeworl 2 caso stanza bloccata
-    Given I am in "Atrio"
-    And I start the game
-    When I digit command1 "vai" and command2"est"
-    And I digit command1 "vai" and command2"sud"  
-    Then I am in the "Bloccata" and i have digitated "vai" and "sud"
-    
-    When I digit command1 "vai" and command2"nord"   
-    Then I am in the "Bloccata" and i have digitated "vai" and "nord"
-    
-     @tag7
-    Scenario:Homeworl 2 caso stanza bloccata con chiave
-    Given I am in "Atrio"
-    And I start the game
-    When I digit command1 "prendi" and command2"chiave"
-    And I digit command1 "vai" and command2"est"  
-    And I digit command1 "vai" and command2"sud"  
-    Then I am in the "Bloccata" and i have digitated "vai" and "sud"
-    
-    When I digit command1 "posa" and command2"chiave"
-    And I digit command1 "vai" and command2"nord"   
-    Then I am in the "Aula N11" and i have digitated "vai" and "nord"
-    
-    
-    
-    
-     @tag8
-    Scenario:Homeworl 2 caso stanza buia
-    Given I am in "Atrio"
-    And I start the game
-    When I digit command1 "vai" and command2"est"
-    And I digit command1 "vai" and command2"nord"  
-    Then I am in the "Buia" and i have digitated "vai" and "nord"
-    
-    When I digit command1 "guarda" and command2"null"
-  ##Then discuterne con il prof
-    
-    
-    
-    
-    
-    
+  Scenario: HW2 prova del comando fine
+  Given Ho iniziato il gioco
+  And avendo digitato il comando "fine"
+  Then il risultato dell' esecuzione fine dovrebbe contenere "Grazie di aver giocato"
+ 
+## risultato atteso per secondo homework -->vai aiuto fine prendi posa guarda 
 
+	@tag2
+	Scenario: HW2 prova del comando aiuto
+  Given Ho iniziato il gioco
+  And avendo digitato il comando "aiuto"
+  Then il risultato della nostra esecuzione dovrebbe contenere "vai" e "prendi" e "posa" e "guarda" e "aiuto"

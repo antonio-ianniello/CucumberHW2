@@ -37,7 +37,7 @@ public class Partita {
 	 * @return vero se partita vinta
 	 */
 	public boolean vinta() {
-		return this.labirinto.getStanzaCorrente()== this.labirinto.getStanzaVincente();
+		return this.labirinto.getStanzaCorrente().getNome().equals(labirinto.getStanzaVincente().getNome());
 	}
 
 	/**

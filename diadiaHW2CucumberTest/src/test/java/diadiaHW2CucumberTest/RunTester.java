@@ -1,5 +1,4 @@
 package diadiaHW2CucumberTest;
-
 import org.junit.runner.RunWith;
 
 import cucumber.api.CucumberOptions;

@@ -1,6 +1,7 @@
 package it.uniroma3.diadia.comandi;
 
 import it.uniroma3.diadia.Partita;
+import it.uniroma3.diadia.interfacciaComandi.IO;
 
 /**
  * interfaccia comando
@@ -30,5 +31,12 @@ public interface Comando {
 	 * il parametro è la stringa digitata dallì utente
 	 */
 	public void setParametro(String parametro);
+	
+	
+	//quando si userà abstract si fa l' esercizio
+	public void setIO(IO tipoconsole);
+	
+	public IO getIO();
+
 
 }

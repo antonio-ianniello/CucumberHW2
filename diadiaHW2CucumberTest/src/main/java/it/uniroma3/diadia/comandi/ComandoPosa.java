@@ -1,6 +1,6 @@
 package it.uniroma3.diadia.comandi;
-
 import it.uniroma3.diadia.Partita;
+import it.uniroma3.diadia.interfacciaComandi.IO;
 
 /**
  * comando "Posa"
@@ -9,10 +9,9 @@ import it.uniroma3.diadia.Partita;
  */
 public class ComandoPosa implements Comando {
 	private String attrezzo;
+	private IO ioConsole;
 	public void esegui(Partita partita) {
-
-
-
+		
 		boolean posato;
 		if(partita.getGiocatore().getBorsa().hasAttrezzo(attrezzo)) {
 			partita.getLabirinto().getStanzaCorrente().addAttrezzo(partita.getGiocatore().getBorsa().getAttrezzo(attrezzo));	//aggiunhgo in stanza
@@ -20,12 +19,12 @@ public class ComandoPosa implements Comando {
 			if(posato) {
 				partita.getGiocatore().getBorsa().removeAttrezzo(attrezzo);
 
-				System.out.println("L' oggetto:"+attrezzo+ " è stato posato correttamente\n");
+				this.ioConsole.mostraMessaggio("L' oggetto:"+attrezzo+ " è stato posato correttamente\n");
 
 			}
 		}
 		else {
-			System.out.println(attrezzo+ "  non in borsa cosa fai? lol\n");
+			this.ioConsole.mostraMessaggio(attrezzo+ "  non in borsa cosa fai? lol\n");
 
 		}
 	}
@@ -33,5 +32,12 @@ public class ComandoPosa implements Comando {
 		this.attrezzo=parametro;
 	}
 
+	public void setIO(IO tipoconsole) {
+		this.ioConsole = tipoconsole;
+		
+	}
+	public IO getIO() {
+		return this.ioConsole;
+	}
 }
 
