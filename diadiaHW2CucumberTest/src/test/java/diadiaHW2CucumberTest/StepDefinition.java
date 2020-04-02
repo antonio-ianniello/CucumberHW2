@@ -13,20 +13,15 @@ public class StepDefinition {
 		helper = new DominioHelper();
 	}
 
-	@When("^ho digitato il comando finale \"([^\"]*)\"$")
-	public void avendo_digitato_il_comando_finale(String riga) throws Throwable {		
+	@When("^ho digitato il comando \"([^\"]*)\"$")
+	public void ho_digitato_il_comando(String riga) throws Throwable {
 		helper.getMyInterfacciaUtente().addRigaSingola(riga);
-		helper.getMyInterfacciaUtente().addRigaSingola("fine");		//problema, quando inserisco più comandi
 	}
 
-	@When("^ho digitato il comando non finale \"([^\"]*)\"$")
-	public void ho_digitato_il_comando_non_finale(String riga) throws Throwable {
-		helper.getMyInterfacciaUtente().addRigaSingola(riga);
-		
-	}
 	
 	@When("^avere aspettato la fine della simulazione$")
 	public void avere_aspettato_la_fine_della_simulazione() throws Throwable {
+		helper.getMyInterfacciaUtente().addRigaSingola("fine");	
 		this.helper.getMyDiaDia();
 		System.out.println(helper.getMyInterfacciaUtente().getRighe());
 	}

@@ -19,7 +19,7 @@ public class FabbricaDiComandiFisarmonica implements FabbricaDiComandi {
 
 
 	public Comando costruisciComando(String istruzione) {
-
+		
 		Scanner scannerDiParole= new Scanner(istruzione);
 
 
