@@ -4,16 +4,9 @@
 Feature: Title of your feature
   I want to use this template for my feature file
 
-   ##questi scenari sotto servono per capire se il labirinto sia corretto    
-    @tag5
-    Scenario:Homeworl 2 caso digita vai ovest 2 volte
-    Given I am in "Atrio"
-    And I start the game
-    When I digit command1 "vai" and command2"ovest"
-    And I digit command1 "vai" and command2"ovest"    
-    Then I am in the "Aula N11" and i have digitated "vai" and "ovest"
-    
-    
+
+
+   ##questi scenari sotto sono quelli vecchi 
     @tag6
     Scenario:Homeworl 2 caso stanza bloccata
     Given I am in "Atrio"

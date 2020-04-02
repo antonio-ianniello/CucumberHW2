@@ -71,25 +71,7 @@ public class DiaDia {
 		return this.partita.isFinita();
 		
 	}
-	
-	/*
-	 * 		if (comandoDaEseguire.getNome().equals("fine")) {
-			this.fine(); 
-			return true;
-		} else if (comandoDaEseguire.getNome().equals("vai"))
-			this.vai(comandoDaEseguire.getParametro());
-		else if (comandoDaEseguire.getNome().equals("aiuto"))
-			this.aiuto();
-		else
-			System.out.println("Comando sconosciuto");
-		if (this.partita.vinta()) {
-			System.out.println("Hai vinto!");
-			return true;
-		} else
-			return false;
-	 * 
-	 * 
-	 * */
+
 
 	public static void main(String[] argc) {
 

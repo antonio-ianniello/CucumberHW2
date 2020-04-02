@@ -49,7 +49,7 @@ public class FabbricaDiComandiFisarmonica implements FabbricaDiComandi {
 		else comando = new ComandoNonValido();
 
 		comando.setParametro(parametro);
-		comando.setIO(this.interfaccia);
+		comando.setIO(interfaccia);
 		return comando;
 	}
 }
