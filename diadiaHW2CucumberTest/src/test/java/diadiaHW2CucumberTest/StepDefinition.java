@@ -20,8 +20,7 @@ public class StepDefinition {
 	@When("^avere aspettato la fine della simulazione$")
 	public void avere_aspettato_la_fine_della_simulazione() throws Throwable {	
 		this.helper.getMyDiaDia();
-		System.out.println("\n RIGHE INPUT SONO: \n"+helper.getMyInterfacciaUtente().getRighe());
-		
+		System.out.println("\n RIGHE INPUT SONO: \n"+helper.getMyInterfacciaUtente().getRighe());		
 	}
 
 	@Then("^il risultato della esecuzione dovrebbe contenere \"([^\"]*)\"$")

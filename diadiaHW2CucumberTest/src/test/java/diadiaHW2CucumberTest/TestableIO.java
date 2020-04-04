@@ -8,13 +8,11 @@ public class TestableIO implements IO{
 	private List<String> messaggi;
 	private String rigaAttuale;
 	private int index=0;
-	//private String messaggioAttuale;
 
 	public TestableIO() {
 		this.righe = new ArrayList<String>();
 		this.messaggi = new ArrayList<String>();
-		this.rigaAttuale = new String();
-		//this.messaggioAttuale = new String();
+		this.rigaAttuale = new String();		
 	}
 
 	public void mostraMessaggio(String messaggio) {
@@ -22,31 +20,30 @@ public class TestableIO implements IO{
 	}
 
 	public String leggiRiga() {			
-		rigaAttuale = this.righe.get(index);
+		this.rigaAttuale = this.righe.get(index);
 		this.index++;
 		return rigaAttuale;
 	}
 
 	public List<String> getRighe() {
-		return righe;
+		return this.righe;
 	}
 
 	public List<String> getMessaggi() {
 		return this.messaggi;
 	}
-	
+
 	public TestableIO addMessaggio(String messaggio) {	
 		this.messaggi.add(messaggio);
 		return this;
-		
 	}
-/*
+	/*
 	public TestableIO addRiga(String... riga) {			//purtroppo dovrei usare List<String> in java come parametro e DataTable in cucumber
 		this.rigaAttuale= riga[0];
 		this.righe.addAll(Arrays.asList(riga));
 		return this;
 	}
-*/
+	 */
 	public TestableIO addRigaSingola(String riga) {	
 		this.righe.add(riga);
 		return this;
@@ -55,9 +52,8 @@ public class TestableIO implements IO{
 	public String getUltimoMessaggio() {
 		return this.getMessaggi().get(this.messaggi.size()-1);
 	}
-	
+
 	public String getMessaggioAtIndex(int index) {
 		return this.getMessaggi().get(index);
 	}
-
 }
