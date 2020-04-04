@@ -21,8 +21,7 @@ public class TestableIO implements IO{
 		this.addMessaggio(messaggio);
 	}
 
-	public String leggiRiga() {		
-		
+	public String leggiRiga() {			
 		rigaAttuale = this.righe.get(index);
 		this.index++;
 		return rigaAttuale;

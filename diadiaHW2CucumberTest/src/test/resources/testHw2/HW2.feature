@@ -24,7 +24,7 @@ Feature: HomeWork 2 Testing
   Then il risultato della esecuzione dovrebbe contenere "Grazie di aver giocato!"
   ##Risultato atteso-->"Grazie di aver giocato"
   
-    @tag3
+  @tag3
   Scenario: Homework 2 caso digita vai est
   Given Ho iniziato il gioco
   When ho digitato il comando "vai est"
@@ -34,7 +34,7 @@ Feature: HomeWork 2 Testing
   Then il risultato della esecuzione dovrebbe contenere "Sei in Aula N11"
   ##Risultato atteso-->"Aula N11"
   
-   @tag3
+  @tag3
   Scenario: Homewor 2 caso digita vai ovest
   Given Ho iniziato il gioco
   When ho digitato il comando "vai ovest"
@@ -51,3 +51,40 @@ Feature: HomeWork 2 Testing
   And ho digitato il comando "fine"
   And avere aspettato la fine della simulazione
   Then il risultato della esecuzione dovrebbe contenere "Sei in Biblioteca"
+  
+     
+  @tag5
+  Scenario:Homeworl 2 caso digita vai ovest 2 volte
+  Given Ho iniziato il gioco
+  When ho digitato il comando "vai ovest"
+  And ho digitato il comando "vai ovest"
+  And ho digitato il comando "aiuto" 
+  And ho digitato il comando "fine"
+  And avere aspettato la fine della simulazione
+  Then il risultato della esecuzione dovrebbe contenere "Sei in Aula N11"
+  
+  @tag6
+  Scenario:Homeworl 2 caso stanza bloccata
+  Given Ho iniziato il gioco
+  When ho digitato il comando "vai est"
+  And ho digitato il comando "vai sud"
+  And ho digitato il comando "vai nord"
+  And ho digitato il comando "aiuto" 
+  And ho digitato il comando "fine"
+  And avere aspettato la fine della simulazione
+  Then il risultato della esecuzione dovrebbe contenere "Sei in Bloccata"
+  ##se non hai la chiave rimani in bloccata
+  
+  @tag7
+  Scenario:Homeworl 2 caso stanza bloccata con chiave
+  Given Ho iniziato il gioco
+  When ho digitato il comando "prendi chiave"
+ 	And ho digitato il comando "vai est"
+  And ho digitato il comando "vai sud"
+  And ho digitato il comando "posa chiave"
+  And ho digitato il comando "vai nord"
+  And ho digitato il comando "aiuto"
+  And ho digitato il comando "fine"
+  And avere aspettato la fine della simulazione
+  Then il risultato della esecuzione dovrebbe contenere "Sei in Aula N11"  
+  

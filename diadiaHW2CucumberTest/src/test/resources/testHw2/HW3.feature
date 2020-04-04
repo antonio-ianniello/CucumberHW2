@@ -41,7 +41,7 @@ Feature: Title of your feature
   And ho digitato il comando "aiuto" 
   And ho digitato il comando "fine"
   And avere aspettato la fine della simulazione
-  Then il risultato della esecuzione dovrebbe contenere "Aula N11"
+  Then il risultato della esecuzione dovrebbe contenere "Sei in Aula N11"
   
  @tag6
   Scenario:Homeworl 2 caso stanza bloccata
@@ -52,7 +52,7 @@ Feature: Title of your feature
   And ho digitato il comando "aiuto" 
   And ho digitato il comando "fine"
   And avere aspettato la fine della simulazione
-  Then il risultato della esecuzione dovrebbe contenere "Bloccata"
+  Then il risultato della esecuzione dovrebbe contenere "Sei in Bloccata"
   ##se non hai la chiave rimani in bloccata
   
   @tag7
@@ -66,7 +66,7 @@ Feature: Title of your feature
   And ho digitato il comando "aiuto"
   And ho digitato il comando "fine"
   And avere aspettato la fine della simulazione
-  Then il risultato della esecuzione dovrebbe contenere "Aula N11"  
+  Then il risultato della esecuzione dovrebbe contenere "Sei in Aula N11"  
   
   
    ##questi scenari sotto sono quelli vecchi 

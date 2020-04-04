@@ -16,7 +16,6 @@ public class StepDefinition {
 	public void ho_digitato_il_comando(String riga) throws Throwable {
 		helper.getMyInterfacciaUtente().addRigaSingola(riga);
 	}
-
 	
 	@When("^avere aspettato la fine della simulazione$")
 	public void avere_aspettato_la_fine_della_simulazione() throws Throwable {	
