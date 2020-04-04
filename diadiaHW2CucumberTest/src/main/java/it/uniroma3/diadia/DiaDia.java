@@ -44,7 +44,7 @@ public class DiaDia {
 
 	public void gioca() {
 		String istruzione; 
-		//this.IO.mostraMessaggio(MESSAGGIO_BENVENUTO);
+		this.IO.mostraMessaggio(MESSAGGIO_BENVENUTO);
 		do		
 			istruzione = IO.leggiRiga();
 		while (!processaIstruzione(istruzione));

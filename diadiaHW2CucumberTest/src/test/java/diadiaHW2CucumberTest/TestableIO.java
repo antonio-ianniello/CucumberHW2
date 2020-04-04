@@ -1,13 +1,13 @@
 package diadiaHW2CucumberTest;
 import java.util.ArrayList;
 import java.util.List;
-
 import it.uniroma3.diadia.interfacciaComandi.IO;
 
 public class TestableIO implements IO{
 	private List<String> righe;
 	private List<String> messaggi;
 	private String rigaAttuale;
+	private int index=0;
 	//private String messaggioAttuale;
 
 	public TestableIO() {
@@ -21,7 +21,10 @@ public class TestableIO implements IO{
 		this.addMessaggio(messaggio);
 	}
 
-	public String leggiRiga() {			
+	public String leggiRiga() {		
+		
+		rigaAttuale = this.righe.get(index);
+		this.index++;
 		return rigaAttuale;
 	}
 
@@ -30,10 +33,10 @@ public class TestableIO implements IO{
 	}
 
 	public List<String> getMessaggi() {
-		return messaggi;
+		return this.messaggi;
 	}
 	
-	public TestableIO addMessaggio(String messaggio) {
+	public TestableIO addMessaggio(String messaggio) {	
 		this.messaggi.add(messaggio);
 		return this;
 		
@@ -45,25 +48,17 @@ public class TestableIO implements IO{
 		return this;
 	}
 */
-	public TestableIO addRigaSingola(String riga) {
-		this.rigaAttuale = riga;
+	public TestableIO addRigaSingola(String riga) {	
 		this.righe.add(riga);
 		return this;
 	}
 
-	public String getUltimaRiga(){		
-		return righe.get(righe.size()-1);		
-	}
-
-	//attenzione, c' è il problema del comando fine da inserire all' ultimo
-	public String getUltimoMessaggio(){		
-		return messaggi.get(messaggi.size()-1);
-
+	public String getUltimoMessaggio() {
+		return this.getMessaggi().get(this.messaggi.size()-1);
 	}
 	
-
-	public String getPenultimoMessaggio() {
-		
-		return this.messaggi.get(messaggi.size()-2);
+	public String getMessaggioAtIndex(int index) {
+		return this.getMessaggi().get(index);
 	}
+
 }
