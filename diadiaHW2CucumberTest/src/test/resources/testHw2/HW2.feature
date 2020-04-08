@@ -48,7 +48,7 @@ Feature: HomeWork 2 Testing
   
   @Hw2
   @Hw3
-  Scenario:Homeworl 2 caso digita vai nord
+  Scenario:Homeworl 2 caso digita vai nord e vittoria
   Given Ho iniziato la partita
   When ho digitato "vai nord"
   And il programma ha stampato"Sei in Biblioteca"
@@ -110,7 +110,8 @@ Feature: HomeWork 2 Testing
   Then il "1" messaggio stampato e "oggetto messo nella borsa correttamente!"
   And il "2" messaggio stampato e "Sei in Aula N11"
   And il "3" messaggio stampato e "Sei in Bloccata"
-  ##And il "4" messaggio stampato e " L' oggetto:chiave è stato posato correttamente"
+  And il "4" messaggio stampato e "chiave"
+  And il "4" messaggio stampato e "posato correttamente"  
   And il "5" messaggio stampato e "Sei in Aula N11"
   And il programma ha stampato "Grazie di aver giocato!" 
   

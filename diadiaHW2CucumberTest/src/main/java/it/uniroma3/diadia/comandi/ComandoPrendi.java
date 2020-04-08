@@ -17,12 +17,12 @@ public class ComandoPrendi implements Comando{
 			presa=partita.getGiocatore().getBorsa().addAttrezzo(partita.getLabirinto().getStanzaCorrente().getAttrezzo(attrezzo));
 			if(presa) {
 				partita.getLabirinto().getStanzaCorrente().removeAttrezzo(partita.getLabirinto().getStanzaCorrente().getAttrezzo(attrezzo));
-				this.ioConsole.mostraMessaggio("oggetto messo nella borsa correttamente!\n");
+				this.ioConsole.mostraMessaggio("oggetto messo nella borsa correttamente!");
 
 			}
 
 			else 
-				this.ioConsole.mostraMessaggio("Borsa piena o oggetto troppo pesante\n");
+				this.ioConsole.mostraMessaggio("Borsa piena o oggetto troppo pesante");
 		}
 		else 
 			this.ioConsole.mostraMessaggio(attrezzo + " non è in stanza");

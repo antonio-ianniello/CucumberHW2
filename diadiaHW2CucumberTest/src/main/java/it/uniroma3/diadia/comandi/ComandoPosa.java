@@ -19,12 +19,12 @@ public class ComandoPosa implements Comando {
 			if(posato) {
 				partita.getGiocatore().getBorsa().removeAttrezzo(attrezzo);
 
-				this.ioConsole.mostraMessaggio("L' oggetto:"+attrezzo+ " è stato posato correttamente\n");
+				this.ioConsole.mostraMessaggio("L' oggetto: "+attrezzo+ " è stato posato correttamente\n");
 
 			}
 		}
 		else {
-			this.ioConsole.mostraMessaggio(attrezzo+ "  non in borsa cosa fai? lol\n");
+			this.ioConsole.mostraMessaggio(attrezzo+ "  non è stato posato correttamente in borsa cosa fai? lol\n");
 
 		}
 	}
