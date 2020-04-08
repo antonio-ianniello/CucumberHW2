@@ -7,12 +7,13 @@ public class TestableIO implements IO{
 	private List<String> righe;
 	private List<String> messaggi;
 	private String rigaAttuale;
-	private int index=0;
+	private int indexRiga=0;
 
 	public TestableIO() {
 		this.righe = new ArrayList<String>();
 		this.messaggi = new ArrayList<String>();
-		this.rigaAttuale = new String();		
+		this.rigaAttuale = new String();
+		
 	}
 
 	public void mostraMessaggio(String messaggio) {
@@ -20,8 +21,8 @@ public class TestableIO implements IO{
 	}
 
 	public String leggiRiga() {			
-		this.rigaAttuale = this.righe.get(index);
-		this.index++;
+		this.rigaAttuale = this.righe.get(indexRiga);
+		this.indexRiga++;
 		return rigaAttuale;
 	}
 
@@ -37,13 +38,7 @@ public class TestableIO implements IO{
 		this.messaggi.add(messaggio);
 		return this;
 	}
-	/*
-	public TestableIO addRiga(String... riga) {			//purtroppo dovrei usare List<String> in java come parametro e DataTable in cucumber
-		this.rigaAttuale= riga[0];
-		this.righe.addAll(Arrays.asList(riga));
-		return this;
-	}
-	 */
+
 	public TestableIO addRigaSingola(String riga) {	
 		this.righe.add(riga);
 		return this;
