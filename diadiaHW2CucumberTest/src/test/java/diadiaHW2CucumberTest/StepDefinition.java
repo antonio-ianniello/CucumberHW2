@@ -33,30 +33,20 @@ public class StepDefinition {
 	public void la_partita_e_finita() throws Throwable {
 		this.dia = new DiaDia(interfaccia);
 		this.dia.gioca();
-		//System.out.println("\n RIGHE INPUT SONO: \n"+this.getMyInterfacciaUtente().getRighe().toString());
+		System.out.println("\n RIGHE INPUT SONO: \n"+this.getMyInterfacciaUtente().getRighe().toString());
 	}
-/*
-	@Then("^il programma ha stampato \"([^\"]*)\" e \"([^\"]*)\" e \"([^\"]*)\" e \"([^\"]*)\" e \"([^\"]*)\" e \"([^\"]*)\"$")
-	public void il_programma_ha_stampato_e_e_e_e_e(String arg1, String arg2, String arg3, String arg4, String arg5, String arg6) throws Throwable {
-		
-		//System.out.println("\n MESSAGGI OUTPUT SONO: \n"+this.getMyInterfacciaUtente().getMessaggi());
-		assertTrue(this.getMyInterfacciaUtente().getMessaggi().contains(arg1));	
-		assertTrue(this.getMyInterfacciaUtente().getMessaggi().contains(arg2));
-		assertTrue(this.getMyInterfacciaUtente().getMessaggi().contains(arg3));
-		assertTrue(this.getMyInterfacciaUtente().getMessaggi().contains(arg4));
-		assertTrue(this.getMyInterfacciaUtente().getMessaggi().contains(arg5));
-		assertTrue(this.getMyInterfacciaUtente().getMessaggi().contains(arg6));
-	}
-*/
+
 	@Then("^il programma ha stampato \"([^\"]*)\"$")
 	public void il_programma_ha_stampato1(String stringaOutput) throws Throwable {	
 		System.out.println("\n MESSAGGI OUTPUT SONO: \n"+this.getMyInterfacciaUtente().getMessaggi());		
 		assertTrue(this.getMyInterfacciaUtente().getMessaggiFinali().contains(stringaOutput));
 	}
 
-	@Then("^il \"([^\"]*)\" messaggio stampato e \"([^\"]*)\"$")
-	public void il_messaggio_stampato_e(int indice, String messaggio) throws Throwable {
-		List<String> messaggiSalvati = this.getMyInterfacciaUtente().getMessaggiAtRiga(indice-1);
+	
+	@Then("^la riga \"([^\"]*)\" ha stampato \"([^\"]*)\"$")
+	public void la_riga_ha_stampato(int indice, String messaggio) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	List<String> messaggiSalvati = this.getMyInterfacciaUtente().getMessaggiAtRiga(indice-1);
 		
 		boolean trovato = false;
 		for(String mex: messaggiSalvati) {
@@ -66,6 +56,7 @@ public class StepDefinition {
 		}
 		assertTrue(trovato);
 	}
+
 	
 
 	public TestableIO getMyInterfacciaUtente() {

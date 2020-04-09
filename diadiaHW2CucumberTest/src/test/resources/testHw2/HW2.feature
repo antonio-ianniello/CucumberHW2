@@ -9,13 +9,12 @@ Feature: HomeWork 2 Testing
   And il programma ha stampato"vai,aiuto,fine,prendi,posa,guarda"
   When ho digitato "fine"
   And la partita e finita
-  ##Then il programma ha stampato "vai" e "aiuto" e "fine" e "prendi" e "posa" e "guarda"   
-  Then il "1" messaggio stampato e "vai"
-  Then il "1" messaggio stampato e "aiuto"
-  Then il "1" messaggio stampato e "fine"
-  Then il "1" messaggio stampato e "prendi"
-  Then il "1" messaggio stampato e "posa"
-  Then il "1" messaggio stampato e "guarda"  
+  Then la riga "1" ha stampato "vai"
+  And la riga "1" ha stampato "aiuto"
+  And la riga "1" ha stampato "prendi"
+  And la riga "1" ha stampato "posa"
+  And la riga "1" ha stampato "guarda"
+  And la riga "1" ha stampato "fine" 
   And il programma ha stampato "Grazie di aver giocato!"
   
   ##Risultato atteso-->"attenzione vai aiuto e i vari comandi hanno uno spazio a fianco
@@ -39,7 +38,7 @@ Feature: HomeWork 2 Testing
   And il programma ha stampato"Aula N11"
   When ho digitato "fine"
   And la partita e finita
-  Then il "1" messaggio stampato e "Sei in Aula N11"
+  Then la riga "1" ha stampato "N11"
   And il programma ha stampato "Grazie di aver giocato!"
   ##Risultato atteso-->"Aula N11"
   
@@ -51,7 +50,7 @@ Feature: HomeWork 2 Testing
   And il programma ha stampato"Sei in Laboratorio Campus"
   When ho digitato "fine"
   And la partita e finita
-  Then il "1" messaggio stampato e "Sei in Laboratorio Campus"
+  Then la riga "1" ha stampato "Laboratorio Campus"
   And il programma ha stampato "Grazie di aver giocato!"
   
   @Hw2
@@ -62,7 +61,7 @@ Feature: HomeWork 2 Testing
   And il programma ha stampato"Sei in Biblioteca"
   When ho digitato "fine"
   And la partita e finita
-  Then il "1" messaggio stampato e "Sei in Biblioteca"
+  Then la riga "1" ha stampato "Biblioteca"
   And il programma ha stampato "Hai vinto congratulazioni" 
   ##Appena vado a nord vinco, quindi il then mi ritorna subito la fine
   
@@ -76,8 +75,8 @@ Feature: HomeWork 2 Testing
   And il programma ha stampato"Sei in Aula N11"
   When ho digitato "fine"
   And la partita e finita
-  Then il "1" messaggio stampato e "Sei in Laboratorio Campus"
-  And il "2" messaggio stampato e "Sei in Aula N11"
+  Then la riga "1" ha stampato "Laboratorio Campus"
+  And la riga "2" ha stampato "N11"
   And il programma ha stampato "Grazie di aver giocato!"
   
   
@@ -93,9 +92,9 @@ Feature: HomeWork 2 Testing
   And il programma ha stampato"Sei in Bloccata"
   When ho digitato "fine"
   And la partita e finita
-  Then il "1" messaggio stampato e "Sei in Aula N11"
-  And il "2" messaggio stampato e "Sei in Bloccata"
-  And il "3" messaggio stampato e "Sei in Bloccata"
+  Then la riga "1" ha stampato "N11"
+  And la riga "2" ha stampato "Bloccata"
+  And la riga "3" ha stampato "Bloccata"
   And il programma ha stampato "Grazie di aver giocato!"
   ##se non hai la chiave rimani in bloccata
   
@@ -115,11 +114,12 @@ Feature: HomeWork 2 Testing
   And il programma ha stampato"Sei in Aula N11"
   When ho digitato "fine"
   And la partita e finita
-  Then il "1" messaggio stampato e "oggetto messo nella borsa correttamente!"
-  And il "2" messaggio stampato e "Sei in Aula N11"
-  And il "3" messaggio stampato e "Sei in Bloccata"
-  And il "4" messaggio stampato e "chiave"
-  And il "4" messaggio stampato e "posato correttamente"  
-  And il "5" messaggio stampato e "Sei in Aula N11"
+  Then la riga "1" ha stampato "correttamente"
+  And la riga "2" ha stampato "N11"
+  And la riga "3" ha stampato "Bloccata"
+  And la riga "4" ha stampato "chiave"
+  And la riga "4" ha stampato "posato correttamente"
+  And la riga "5" ha stampato "N11"
   And il programma ha stampato "Grazie di aver giocato!" 
+  ##chiave deve comparire nel test ovvero il tipo di oggetto che viene posato?
   
