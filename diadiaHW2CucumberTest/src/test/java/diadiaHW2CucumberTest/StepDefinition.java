@@ -1,16 +1,12 @@
 package diadiaHW2CucumberTest;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-
 import java.util.List;
-
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import it.uniroma3.diadia.DiaDia;
 
 public class StepDefinition {	
-		
 	private TestableIO interfaccia;
 	private DiaDia dia ;
 
@@ -36,18 +32,10 @@ public class StepDefinition {
 		System.out.println("\n RIGHE INPUT SONO: \n"+this.getMyInterfacciaUtente().getRighe().toString());
 	}
 
-	@Then("^il programma ha stampato \"([^\"]*)\"$")
-	public void il_programma_ha_stampato1(String stringaOutput) throws Throwable {	
-		System.out.println("\n MESSAGGI OUTPUT SONO: \n"+this.getMyInterfacciaUtente().getMessaggi());		
-		assertTrue(this.getMyInterfacciaUtente().getMessaggiFinali().contains(stringaOutput));
-	}
-
-	
 	@Then("^la riga \"([^\"]*)\" ha stampato \"([^\"]*)\"$")
 	public void la_riga_ha_stampato(int indice, String messaggio) throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	List<String> messaggiSalvati = this.getMyInterfacciaUtente().getMessaggiAtRiga(indice-1);
-		
+		List<String> messaggiSalvati = this.getMyInterfacciaUtente().getMessaggiAtRiga(indice-1);
+
 		boolean trovato = false;
 		for(String mex: messaggiSalvati) {
 			if(mex.contains(messaggio)) {
@@ -57,7 +45,11 @@ public class StepDefinition {
 		assertTrue(trovato);
 	}
 
-	
+	@Then("^il programma ha stampato \"([^\"]*)\"$")
+	public void il_programma_ha_stampato1(String stringaOutput) throws Throwable {	
+		System.out.println("\n MESSAGGI OUTPUT SONO: \n"+this.getMyInterfacciaUtente().getMessaggi());		
+		assertTrue(this.getMyInterfacciaUtente().getMessaggiFinali().contains(stringaOutput));
+	}
 
 	public TestableIO getMyInterfacciaUtente() {
 		return this.interfaccia;
