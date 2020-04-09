@@ -35,7 +35,7 @@ public class StepDefinition {
 		this.dia.gioca();
 		//System.out.println("\n RIGHE INPUT SONO: \n"+this.getMyInterfacciaUtente().getRighe().toString());
 	}
-
+/*
 	@Then("^il programma ha stampato \"([^\"]*)\" e \"([^\"]*)\" e \"([^\"]*)\" e \"([^\"]*)\" e \"([^\"]*)\" e \"([^\"]*)\"$")
 	public void il_programma_ha_stampato_e_e_e_e_e(String arg1, String arg2, String arg3, String arg4, String arg5, String arg6) throws Throwable {
 		
@@ -47,7 +47,7 @@ public class StepDefinition {
 		assertTrue(this.getMyInterfacciaUtente().getMessaggi().contains(arg5));
 		assertTrue(this.getMyInterfacciaUtente().getMessaggi().contains(arg6));
 	}
-
+*/
 	@Then("^il programma ha stampato \"([^\"]*)\"$")
 	public void il_programma_ha_stampato1(String stringaOutput) throws Throwable {	
 		System.out.println("\n MESSAGGI OUTPUT SONO: \n"+this.getMyInterfacciaUtente().getMessaggi());		

@@ -9,7 +9,15 @@ Feature: HomeWork 2 Testing
   And il programma ha stampato"vai,aiuto,fine,prendi,posa,guarda"
   When ho digitato "fine"
   And la partita e finita
-  Then il programma ha stampato "vai " e "aiuto " e "fine " e "prendi " e "posa " e "guarda "   
+  ##Then il programma ha stampato "vai" e "aiuto" e "fine" e "prendi" e "posa" e "guarda"   
+  Then il "1" messaggio stampato e "vai"
+  Then il "1" messaggio stampato e "aiuto"
+  Then il "1" messaggio stampato e "fine"
+  Then il "1" messaggio stampato e "prendi"
+  Then il "1" messaggio stampato e "posa"
+  Then il "1" messaggio stampato e "guarda"  
+  And il programma ha stampato "Grazie di aver giocato!"
+  
   ##Risultato atteso-->"attenzione vai aiuto e i vari comandi hanno uno spazio a fianco
   ##solo per gli homework dove aiuto sono più stringhe e non una singola
 
