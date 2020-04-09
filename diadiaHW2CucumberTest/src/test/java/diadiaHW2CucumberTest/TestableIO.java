@@ -5,17 +5,15 @@ import java.util.List;
 import it.uniroma3.diadia.interfacciaComandi.IO;
 
 public class TestableIO implements IO{
-	
+
 	private RigaLetta rigaAttuale;
-	private List<RigaLetta> righe;
-	//private List<String> messaggi;	
+	private List<RigaLetta> righe;	
 	private int indiceRigaLetta=0;
-	
+
 
 	public TestableIO() {
 		this.rigaAttuale = new RigaLetta();
 		this.righe = new ArrayList<RigaLetta>();
-		//this.messaggi = new ArrayList<String>();
 	}
 
 	public void mostraMessaggio(String messaggio) {
@@ -34,9 +32,8 @@ public class TestableIO implements IO{
 	}
 
 	public List<String> getMessaggi() {
-		//return this.messaggi;
 		List<String> messaggi = new ArrayList<String>();
-		
+
 		for(RigaLetta r: this.righe) {
 			messaggi.addAll(r.getMessaggi());
 		}
@@ -44,7 +41,6 @@ public class TestableIO implements IO{
 	}
 
 	public TestableIO addMessaggio(String messaggio) {	
-		//this.messaggi.add(messaggio);
 		this.rigaAttuale.getMessaggi().add(messaggio);
 		return this;
 	}
@@ -54,17 +50,13 @@ public class TestableIO implements IO{
 		this.righe.add(nuovaRiga);
 		return this;
 	}
-/*
-	public void setMessaggiAtIndex(int index,String messaggio) {
-		this.righe.get(index).getMessaggi().add(messaggio);
-	}
-*/	
+
 	public List<String> getMessaggiAtRiga(int numeroRiga) {
 		return  this.righe.get(numeroRiga).getMessaggi();
 	}
-	
+
 	public List<String> getMessaggiFinali(){
-		
+
 		return this.getRighe().get(indiceRigaLetta-1).getMessaggi();
 	}
 }
