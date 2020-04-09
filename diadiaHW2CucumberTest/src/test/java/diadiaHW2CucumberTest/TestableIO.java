@@ -22,7 +22,6 @@ public class TestableIO implements IO{
 
 	public String leggiRiga() {
 		this.rigaAttuale = this.righe.get(indiceRigaLetta);
-		this.rigaAttuale.setNumeroRiga(indiceRigaLetta);
 		this.indiceRigaLetta++;		
 		return rigaAttuale.getRiga();
 	}
@@ -52,7 +51,7 @@ public class TestableIO implements IO{
 	}
 
 	public List<String> getMessaggiAtRiga(int numeroRiga) {
-		return  this.righe.get(numeroRiga).getMessaggi();
+		return  this.righe.get(numeroRiga-1).getMessaggi();
 	}
 
 	public List<String> getMessaggiFinali(){

@@ -6,7 +6,6 @@ import java.util.List;
 public class RigaLetta {
 	
 	private String riga;
-	private int numeroRiga=0;
 	private List<String> messaggi;
 	
 	public RigaLetta() {
@@ -26,16 +25,7 @@ public class RigaLetta {
 
 	public void setRiga(String riga) {
 		this.riga = riga;
-	}
-
-	public int getNumeroRiga() {
-		return numeroRiga;
-	}
-
-	public void setNumeroRiga(int indice) {
-		this.numeroRiga = indice;
 	}	
-	
 	
 	public List<String> getMessaggi() {
 		return messaggi;
@@ -48,19 +38,19 @@ public class RigaLetta {
 
 	@Override
 	public int hashCode() {
-		return this.getNumeroRiga()+this.getRiga().hashCode();
+		return this.getRiga().hashCode();
 	}
 
 	@Override
 	public boolean equals(Object o) {
 		RigaLetta that = (RigaLetta) o;
-		return this.getRiga().equals(that.getRiga()) && this.getNumeroRiga()==that.getNumeroRiga();
+		return this.getRiga().equals(that.getRiga());
 	}
 	
 	@Override
 	public String toString() {
 		StringBuilder stringa = new StringBuilder();
-		stringa.append(this.getRiga()+" inidice numero"+this.getNumeroRiga()+"\n");		
+		stringa.append(this.getRiga());		
 		return stringa.toString();
 		
 	}

@@ -34,7 +34,7 @@ public class StepDefinition {
 
 	@Then("^la riga \"([^\"]*)\" ha stampato \"([^\"]*)\"$")
 	public void la_riga_ha_stampato(int indice, String messaggio) throws Throwable {
-		List<String> messaggiSalvati = this.getMyInterfacciaUtente().getMessaggiAtRiga(indice-1);
+		List<String> messaggiSalvati = this.getMyInterfacciaUtente().getMessaggiAtRiga(indice);
 
 		boolean trovato = false;
 		for(String mex: messaggiSalvati) {
