@@ -6,13 +6,13 @@ import it.uniroma3.diadia.interfacciaComandi.IO;
 
 public class TestableIO implements IO{
 
-	private RigaLetta rigaAttuale;
+	private RigaLetta rigaCorrente;
 	private List<RigaLetta> righe;	
 	private int indiceRigaLetta=0;
 
 
 	public TestableIO() {
-		this.rigaAttuale = new RigaLetta();
+		this.rigaCorrente = null;
 		this.righe = new ArrayList<RigaLetta>();
 	}
 
@@ -21,9 +21,9 @@ public class TestableIO implements IO{
 	}
 
 	public String leggiRiga() {
-		this.rigaAttuale = this.righe.get(indiceRigaLetta);
+		this.rigaCorrente = this.righe.get(indiceRigaLetta);
 		this.indiceRigaLetta++;		
-		return rigaAttuale.getRiga();
+		return rigaCorrente.getRiga();
 	}
 
 	public List<RigaLetta> getRighe() {
@@ -39,8 +39,11 @@ public class TestableIO implements IO{
 		return messaggi;
 	}
 
-	public TestableIO addMessaggio(String messaggio) {	
-		this.rigaAttuale.getMessaggi().add(messaggio);
+	public TestableIO addMessaggio(String messaggio) {
+		if(this.rigaCorrente==null) {
+		this.getMessaggioIninziale();
+		}
+		this.rigaCorrente.getMessaggi().add(messaggio);
 		return this;
 	}
 
@@ -51,11 +54,29 @@ public class TestableIO implements IO{
 	}
 
 	public List<String> getMessaggiAtRiga(int numeroRiga) {
-		return  this.righe.get(numeroRiga-1).getMessaggi();
+		return  this.righe.get(numeroRiga).getMessaggi();
 	}
 
 	public List<String> getMessaggiFinali(){
-
 		return this.getRighe().get(indiceRigaLetta-1).getMessaggi();
 	}
+
+
+	//aggiunti
+	public RigaLetta getRigaCorrente() {
+		return rigaCorrente;
+	}
+
+	public void setRigaCorrente(RigaLetta rigaCorrente) {
+		this.rigaCorrente = rigaCorrente;
+	}
+
+	public TestableIO getMessaggioIninziale() {
+		this.rigaCorrente = new RigaLetta("fittizia");
+		this.righe.add(0, rigaCorrente);
+		
+		return this;
+	}
+
+
 }
