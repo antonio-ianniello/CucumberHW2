@@ -72,7 +72,7 @@ public class TestableIO implements IO{
 	}
 
 	public TestableIO getMessaggioIninziale() {
-		this.rigaCorrente = new RigaLetta("fittizia");
+		this.rigaCorrente = new RigaLetta("benvenuto");
 		this.righe.add(0, rigaCorrente);
 		
 		return this;
