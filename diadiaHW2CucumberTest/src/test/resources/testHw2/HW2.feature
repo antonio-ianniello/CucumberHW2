@@ -3,6 +3,7 @@
 Feature: HomeWork 2 Testing
   Voglio usare questo template per testare il codice inerente all' homework 2
 
+  @Hw2
 	Scenario: HW2 prova del comando aiuto
   Given Ho iniziato la partita
   When ho digitato "aiuto"
@@ -16,22 +17,16 @@ Feature: HomeWork 2 Testing
   And la riga "1" ha stampato "guarda"
   And la riga "1" ha stampato "fine" 
   And il programma ha stampato "Grazie di aver giocato!"
-  
-  ##Risultato atteso-->"attenzione vai aiuto e i vari comandi hanno uno spazio a fianco
-  ##solo per gli homework dove aiuto sono più stringhe e non una singola
 
   @Hw2
-  @Hw3
   Scenario: HW2 prova del comando fine
   Given Ho iniziato la partita
   When ho digitato "fine"
   And il programma ha stampato"Grazie di aver giocato!"
   And la partita e finita
   Then il programma ha stampato "Grazie di aver giocato!"
-  ##Risultato atteso-->"Grazie di aver giocato"
   
   @Hw2
-  @Hw3
   Scenario: Homework 2 caso digita vai est
   Given Ho iniziato la partita
   When ho digitato "vai est"
@@ -40,11 +35,9 @@ Feature: HomeWork 2 Testing
   And la partita e finita
   Then la riga "1" ha stampato "N11"
   And il programma ha stampato "Grazie di aver giocato!"
-  ##Risultato atteso-->"Aula N11"
   
   @Hw2
-  @Hw3
-  Scenario: Homewor 2 caso digita vai ovest
+  Scenario: Homework 2 caso digita vai ovest
   Given Ho iniziato la partita
   When ho digitato "vai ovest"
   And il programma ha stampato"Sei in Laboratorio Campus"
@@ -54,8 +47,7 @@ Feature: HomeWork 2 Testing
   And il programma ha stampato "Grazie di aver giocato!"
   
   @Hw2
-  @Hw3
-  Scenario:Homeworl 2 caso digita vai nord e vittoria
+  Scenario: Homework 2 caso digita vai nord e vittoria
   Given Ho iniziato la partita
   When ho digitato "vai nord"
   And il programma ha stampato"Sei in Biblioteca"
@@ -63,11 +55,9 @@ Feature: HomeWork 2 Testing
   And la partita e finita
   Then la riga "1" ha stampato "Biblioteca"
   And il programma ha stampato "Hai vinto congratulazioni" 
-  ##Appena vado a nord vinco, quindi il then mi ritorna subito la fine
   
   @Hw2  
-  @Hw3
-  Scenario:Homeworl 2 caso digita vai ovest 2 volte
+  Scenario: Homework 2 caso digita vai ovest 2 volte
   Given Ho iniziato la partita
   When ho digitato "vai ovest"
   And il programma ha stampato"Sei in Laboratorio Campus"
@@ -77,12 +67,10 @@ Feature: HomeWork 2 Testing
   And la partita e finita
   Then la riga "1" ha stampato "Laboratorio Campus"
   And la riga "2" ha stampato "N11"
-  And il programma ha stampato "Grazie di aver giocato!"
-  
+  And il programma ha stampato "Grazie di aver giocato!"  
   
   @Hw2
-  @Hw3
-  Scenario:Homeworl 2 caso stanza bloccata
+  Scenario: Homework 2 caso stanza bloccata
   Given Ho iniziato la partita
   When ho digitato "vai est"
   And il programma ha stampato"Sei in Aula N11"
@@ -99,8 +87,7 @@ Feature: HomeWork 2 Testing
   ##se non hai la chiave rimani in bloccata
   
   @Hw2
-  @Hw3
-  Scenario:Homeworl 2 caso stanza bloccata con chiave
+  Scenario: Homework 2 caso stanza bloccata con chiave
   Given Ho iniziato la partita
   When ho digitato "prendi chiave"
   And il programma ha stampato"oggetto messo nella borsa correttamente!"
@@ -123,8 +110,8 @@ Feature: HomeWork 2 Testing
   And il programma ha stampato "Grazie di aver giocato!" 
   ##chiave deve comparire nel test ovvero il tipo di oggetto che viene posato?
   
-  @Hw3
-  Scenario:Homeworl 2 caso stanza buia
+  @Hw2
+  Scenario: Homework 2 caso stanza buia
   Given Ho iniziato la partita
   When ho digitato "vai est"
   And il programma ha stampato"Sei in N11"

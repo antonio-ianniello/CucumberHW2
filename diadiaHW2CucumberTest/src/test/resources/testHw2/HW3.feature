@@ -13,5 +13,3 @@ Feature: Hw3 feature
     Then I am in the "Buia" and i have digitated "vai" and "nord"
     
     When I digit command1 "guarda" and command2"null"
-  ##Then discuterne con il prof
-    
