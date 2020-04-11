@@ -11,7 +11,6 @@ public class TestableIO implements IO{
 	private int indiceRigaLetta=0;
 	private List<String> messaggiIniziali ;
 
-
 	public TestableIO() {
 		this.rigaCorrente = new RigaLetta();
 		this.righe = new ArrayList<RigaLetta>();
@@ -37,7 +36,7 @@ public class TestableIO implements IO{
 	public List<String> getMessaggi() {
 		List<String> messaggi = new ArrayList<String>();
 		
-		if(this.messaggiIniziali!=null)
+		if(this.messaggiIniziali.size()>0)
 			messaggi.add(this.getMessaggioIninziale().toString());
 		for(RigaLetta r: this.righe) {
 			messaggi.addAll(r.getMessaggi());
