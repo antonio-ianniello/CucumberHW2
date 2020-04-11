@@ -98,7 +98,7 @@ Feature: HomeWork 2 Testing
   And il programma ha stampato "Grazie di aver giocato!"
   ##se non hai la chiave rimani in bloccata
   
-  @Hw2  
+  @Hw2
   @Hw3
   Scenario:Homeworl 2 caso stanza bloccata con chiave
   Given Ho iniziato la partita
@@ -123,3 +123,18 @@ Feature: HomeWork 2 Testing
   And il programma ha stampato "Grazie di aver giocato!" 
   ##chiave deve comparire nel test ovvero il tipo di oggetto che viene posato?
   
+  @Hw3
+  Scenario:Homeworl 2 caso stanza buia
+  Given Ho iniziato la partita
+  When ho digitato "vai est"
+  And il programma ha stampato"Sei in N11"
+  When ho digitato "vai nord"
+  And il programma ha stampato"Sei in Buia"
+  When ho digitato "guarda"
+  And il programma ha stampato"qui c'è un buio pesto!"
+  When ho digitato "fine"
+  And la partita e finita
+  Then la riga "1" ha stampato "N11"
+  And la riga "2" ha stampato "Buia"
+  And la riga "3" ha stampato "buio"
+  And il programma ha stampato "Grazie di aver giocato!"

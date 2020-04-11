@@ -9,6 +9,7 @@ import it.uniroma3.diadia.DiaDia;
 public class StepDefinition {	
 	private TestableIO interfaccia;
 	private DiaDia dia ;
+	private int punteggio;
 
 	@Given("^Ho iniziato la partita$")
 	public void ho_iniziato_la_partita() throws Throwable {
