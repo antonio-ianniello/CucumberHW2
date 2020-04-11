@@ -19,8 +19,9 @@ public class TestableIO implements IO{
 
 	public void mostraMessaggio(String messaggio) {
 		if(this.indiceRigaLetta==0)
-			this.setMessaggioIninziale(messaggio);
-		this.addMessaggio(messaggio);
+			this.setMessaggiIninziali(messaggio);
+		else
+			this.addMessaggio(messaggio);
 	}
 
 	public String leggiRiga() {
@@ -37,7 +38,7 @@ public class TestableIO implements IO{
 		List<String> messaggi = new ArrayList<String>();
 		
 		if(this.messaggiIniziali.size()>0)
-			messaggi.add(this.getMessaggioIninziale().toString());
+			messaggi.add(this.getMessaggiIninziali().toString());
 		for(RigaLetta r: this.righe) {
 			messaggi.addAll(r.getMessaggi());
 		}
@@ -64,8 +65,6 @@ public class TestableIO implements IO{
 		return this.getRighe().get(indiceRigaLetta-1).getMessaggi();
 	}
 
-
-	//aggiunti
 	public RigaLetta getRigaCorrente() {
 		return rigaCorrente;
 	}
@@ -74,11 +73,11 @@ public class TestableIO implements IO{
 		this.rigaCorrente = rigaCorrente;
 	}
 
-	public List<String> getMessaggioIninziale() {
+	public List<String> getMessaggiIninziali() {
 		return this.messaggiIniziali;
 	}	
 
-	private void setMessaggioIninziale(String messaggioIniziale) {
+	private void setMessaggiIninziali(String messaggioIniziale) {
 		this.messaggiIniziali.add(messaggioIniziale);
 		
 	}
