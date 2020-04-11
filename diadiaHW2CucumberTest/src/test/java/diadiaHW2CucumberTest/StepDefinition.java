@@ -9,7 +9,7 @@ import it.uniroma3.diadia.DiaDia;
 public class StepDefinition {	
 	private TestableIO interfaccia;
 	private DiaDia dia ;
-	private int punteggio;
+	private int punteggio=0;
 
 	@Given("^Ho iniziato la partita$")
 	public void ho_iniziato_la_partita() throws Throwable {
@@ -36,23 +36,36 @@ public class StepDefinition {
 	@Then("^la riga \"([^\"]*)\" ha stampato \"([^\"]*)\"$")
 	public void la_riga_ha_stampato(int indice, String messaggio) throws Throwable {
 		List<String> messaggiSalvati = this.getMyInterfacciaUtente().getMessaggiAtRiga(indice);
-
-		boolean trovato = false;
-		for(String mex: messaggiSalvati) {
-			if(mex.contains(messaggio)) {
-				trovato = true;
-			}
-		}
+		boolean trovato = this.stringaPresente(messaggiSalvati, messaggio);
 		assertTrue(trovato);
 	}
 
 	@Then("^il programma ha stampato \"([^\"]*)\"$")
-	public void il_programma_ha_stampato1(String stringaOutput) throws Throwable {	
-		System.out.println("\n MESSAGGI OUTPUT SONO: \n"+this.getMyInterfacciaUtente().getMessaggi());		
-		assertTrue(this.getMyInterfacciaUtente().getMessaggiFinali().contains(stringaOutput));
+	public void il_programma_ha_stampato1(String messaggio) throws Throwable {			
+		List<String> messaggiFinali = this.getMyInterfacciaUtente().getMessaggiFinali();
+		boolean trovato = this.stringaPresente(messaggiFinali, messaggio);
+		assertTrue(trovato);
+		
+		System.out.println("\n MESSAGGI OUTPUT SONO: \n"+this.getMyInterfacciaUtente().getMessaggi());
+		this.stampaPunteggio();
 	}
 
 	public TestableIO getMyInterfacciaUtente() {
 		return this.interfaccia;
+	}
+	
+	public boolean stringaPresente(List<String> stringhe,String verifica) {
+		boolean trovato = false;
+		for(String mex: stringhe) {
+			if(mex.contains(verifica)) {
+				trovato = true;
+				this.punteggio++;
+			}
+		}
+		return trovato;
+	}
+	
+	public void stampaPunteggio() {
+		System.out.println("PUNTEGGIO SCENARIO OTTENUTO DALLO STUDENTE:"+this.punteggio);
 	}
 }

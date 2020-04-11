@@ -54,7 +54,7 @@ Feature: HomeWork 2 Testing
   When ho digitato "fine"
   And la partita e finita
   Then la riga "1" ha stampato "Biblioteca"
-  And il programma ha stampato "Hai vinto congratulazioni" 
+  And il programma ha stampato "Hai vinto" 
   
   @Hw2  
   Scenario: Homework 2 caso digita vai ovest 2 volte
