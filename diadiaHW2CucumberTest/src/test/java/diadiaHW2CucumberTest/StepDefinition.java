@@ -45,15 +45,15 @@ public class StepDefinition {
 		List<String> messaggiFinali = this.getMyInterfacciaUtente().getMessaggiFinali();
 		boolean trovato = this.stringaPresente(messaggiFinali, messaggio);
 		assertTrue(trovato);
-		
+
 		System.out.println("\n MESSAGGI OUTPUT SONO: \n"+this.getMyInterfacciaUtente().getMessaggi());
-		this.stampaPunteggio();
+		//this.stampaPunteggio();
 	}
 
 	public TestableIO getMyInterfacciaUtente() {
 		return this.interfaccia;
 	}
-	
+
 	public boolean stringaPresente(List<String> stringhe,String verifica) {
 		boolean trovato = false;
 		for(String mex: stringhe) {
@@ -64,7 +64,7 @@ public class StepDefinition {
 		}
 		return trovato;
 	}
-	
+
 	public void stampaPunteggio() {
 		System.out.println("PUNTEGGIO SCENARIO OTTENUTO DALLO STUDENTE:"+this.punteggio);
 	}

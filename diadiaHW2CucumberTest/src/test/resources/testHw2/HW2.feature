@@ -84,7 +84,6 @@ Feature: HomeWork 2 Testing
   And la riga "2" ha stampato "Bloccata"
   And la riga "3" ha stampato "Bloccata"
   And il programma ha stampato "Grazie di aver giocato!"
-  ##se non hai la chiave rimani in bloccata
   
   @Hw2
   Scenario: Homework 2 caso stanza bloccata con chiave
@@ -108,7 +107,6 @@ Feature: HomeWork 2 Testing
   And la riga "4" ha stampato "posato correttamente"
   And la riga "5" ha stampato "N11"
   And il programma ha stampato "Grazie di aver giocato!" 
-  ##chiave deve comparire nel test ovvero il tipo di oggetto che viene posato?
   
   @Hw2
   Scenario: Homework 2 caso stanza buia
